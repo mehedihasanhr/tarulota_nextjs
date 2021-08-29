@@ -3,10 +3,22 @@
     box-shadow: 0 3px 6px rga(0 0 0 / 10px);
 }
 
-
 .__wrapper{
     display: flex;
     height: 80px;
     align-items: center;
     justify-content: space-between;
+}
+
+.__action{
+    display: flex;
+    align-items: center;
+}
+
+.__fav{
+    margin-right: 20px;
+}
+.__cart{
+    display: flex;
+    align-items: center;
 }

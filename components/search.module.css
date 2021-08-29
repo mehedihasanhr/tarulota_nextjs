@@ -8,6 +8,7 @@
     width: 100%;
     padding: 6px 20px;
     border: 1px solid var(--primary-theme);
+    border-radius: 0;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }

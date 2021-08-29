@@ -1,0 +1,39 @@
+.__badge{
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+}
+
+.__count{
+    min-width: 20px;
+    height: 20px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 16px;
+    border-radius: 100%;
+    background: #12ac66;
+    border: 2px solid #fff;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 50%);
+}
+
+.__count_details{
+    padding: 0 5px;
+    border-radius: 15px;
+}
+
+.__count_dot{
+    min-width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    color: #12ac66;
+    overflow: hidden;
+}
+
+.__count_none{
+    display: none;
+}

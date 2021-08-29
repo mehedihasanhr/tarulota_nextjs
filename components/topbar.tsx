@@ -41,7 +41,7 @@ const Topbar = () =>{
                         <li className={styles._tb_nav_item}>
                             <Download strokeWidth={2} width={13} />
                             <Link href="/">
-                                <a className={styles._tb_nav_link} style={{borderRight: 0}}> Download App </a>
+                                <a className={styles._tb_nav_link} style={{borderRight: 0, paddingRight: 0}}> Download App </a>
                             </Link>
                         </li>
                     </ul>

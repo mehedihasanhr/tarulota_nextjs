@@ -53,13 +53,18 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, 'Open Sans', 'Lato', sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 * {
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover{
+  color: #11ae68;
+}
+
+
