@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="870" height="440" viewBox="0 0 870 440">
+  <g id="Group_237" data-name="Group 237" transform="translate(-398 -140)">
+    <g id="Rectangle_154" data-name="Rectangle 154" transform="translate(398 140)" fill="#c2c5c8" stroke="#ebeced" stroke-width="1">
+      <rect width="870" height="440" rx="4" stroke="none"/>
+      <rect x="0.5" y="0.5" width="869" height="439" rx="3.5" fill="none"/>
+    </g>
+    <text id="image_slider" data-name="image slider" transform="translate(833 373)" fill="#717980" font-size="36" font-family="Poppins-Bold, Poppins" font-weight="700"><tspan x="-115.398" y="0">image slider</tspan></text>
+  </g>
+</svg>

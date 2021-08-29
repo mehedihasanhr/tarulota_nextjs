@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Galada&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+
+:root{
+  --primary-theme: #11ae68;
+  --primary-theme-1: #41be86;
+  --primary-theme-2: #a1e6c7;
+  --primary-theme-3: #e7f9f1;
+
+  --secondary-theme: #717980;
+  --secondary-theme-1: #858c92;
+  --secondary-theme-2: #9a9fa4;
+  --secondary-theme-3: #aeb2b6;
+
+  --warning-theme: #ffa800;
+  --warning-theme-1: #ffb933;
+  --warning-theme-2: #ffdc99;
+  --warning-theme-3: #ffeecc;
+
+  --info-theme: #1cbabf;
+  --info-theme-1: #4bd3d8;
+  --info-theme-2: #a5e9eb;
+  --info-theme-3: #e9fafa;
+
+  --danger-theme: #fd2e2f;
+  --danger-theme-1: #fd5859;
+  --danger-theme-2: #feabac;
+  --danger-theme-3: #ffeaea;
+
+  --light-theme: #ffffff;
+  --light-theme-1: #f5f6f7;
+  --light-theme-2: #ebeced;
+  --light-theme-3: #c2c5c8;
+
+  --dark-theme: #2a323a;
+  --dark-theme-1: #343f49;
+  --dark-theme-2: #48525b;
+  --dark-theme-3: #5d656d;
+
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: #F5F6F7;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, 'Open Sans', 'Lato', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
