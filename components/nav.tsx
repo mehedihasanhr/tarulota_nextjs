@@ -10,11 +10,12 @@ interface NavProps {
       path: string;
       displayName: string;
     }[]
+  className?: string;
 }
 
-const Nav = ({ elements }: NavProps) => {
+const Nav = ({ elements, className }: NavProps) => {
   return (
-    <ul className={styles.__nav}>
+    <ul className={`${styles.__nav} ${className}`}>
       {elements.map((el, idx) => (
         <li className={styles.__nav_item} key={idx}>
           <Link href={el.path}>
