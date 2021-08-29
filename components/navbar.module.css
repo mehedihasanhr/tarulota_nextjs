@@ -1,0 +1,12 @@
+.__header{
+    background: #fff;
+    box-shadow: 0 3px 6px rga(0 0 0 / 10px);
+}
+
+
+.__wrapper{
+    display: flex;
+    height: 80px;
+    align-items: center;
+    justify-content: space-between;
+}

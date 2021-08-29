@@ -6,6 +6,11 @@ import styles from './navbar.module.css';
 
 //custom components
 import SearchBox from './search';
+import Nav from './nav';
+
+//utilites
+import {NavItems} from '../utilites/navItems';
+
 
 const Navbar = () => {
     return (
@@ -24,6 +29,9 @@ const Navbar = () => {
 
                         {/* search bar */}
                         <SearchBox />
+                        
+                        {/* Nav */}
+                        <Nav elements = {NavItems}/>
                     </div>
                 </div>
             </div>
