@@ -62,5 +62,6 @@
     .__search{
         max-width: 70%;
         border: 1px solid rab(0 0 0/ 10%);
+        display: none;
     }
 }
