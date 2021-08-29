@@ -1,17 +1,15 @@
-//default components
-import dynamic from "next/dynamic";
 
-const Topbar = dynamic(
-    () => import("../components/topbar"),
-    // eslint-disable-next-line react/display-name
-    { loading: ()=> <p>Loading...</p>  }
-  )
+//custom components 
+import Topbar from './topbar';
+import Navbar from './navbar';
+  
   
 
 export default function Layout({ children }: any) {
   return (
     <>
       <Topbar />
+      <Navbar />
       {children}
     </>
   );
