@@ -39,7 +39,9 @@ const Navbar = () => {
             </button>
 
             <div className={styles.__logo}>
-              <Logo />
+              <Link href="/">
+                <a> <Logo />  </a>
+              </Link>
             </div>
 
             <SearchBox className={styles.__search} />
