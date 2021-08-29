@@ -6,7 +6,7 @@ import { useState } from "react";
 import styles from "./navbar.module.css";
 
 //icons
-import { Heart, Menu, Search, ShoppingCart } from "react-feather";
+import { Heart, Menu, Search, ShoppingCart, User } from "react-feather";
 
 //custom components
 import SearchBox from "./search";
@@ -51,6 +51,12 @@ const Navbar = () => {
               <Link href="/" >
                 <a className={styles.__msearch} target="_blanck" onClick={showSearchBar}>
                     <Search strokeWidth={2} className={styles.__fav_icon} />
+                </a>
+              </Link>
+
+              <Link href="/fav">
+                <a className={styles.__profile}>
+                    <User strokeWidth={2} className={styles.__fav_icon} />
                 </a>
               </Link>
 

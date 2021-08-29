@@ -37,3 +37,13 @@
 .__count_none{
     display: none;
 }
+
+
+@media only screen and (max-width: 576px){
+    .__count{
+        min-width: 18px;
+        height: 18px;
+        line-height: 15px;
+        font-size: 10px;
+    }
+}

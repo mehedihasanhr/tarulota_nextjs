@@ -26,7 +26,8 @@
 }
 
 .__fav,
-.__msearch{
+.__msearch,
+.__profile{
     margin-right: 20px;
 }
 .__cart{
@@ -37,6 +38,9 @@
     white-space: nowrap;
 }
 .__msearch{
+    display: none;
+}
+.__profile{
     display: none;
 }
 
@@ -60,24 +64,35 @@
 }
 
 @media only screen and (max-width: 768px){
-    .__wrapper{
-        height: 60px;
+    .__wrapper{height: 60px;}
+    .__logo{ width: 110px;}
+    .__fev,
+    .__profile,
+    .__msearch{
+        margin-right: 10px;
     }
-    .__logo{
-        width: 110px;
-    }
+    .__profile{ display: block;}
 }
 
 @media only screen and (max-width: 576px){
-    .__wrapper{
-        height: 50px;
-    }
+    .__wrapper{ height: 50px;}
+    .__menu_icon{ width: 18px;}
     .__logo{
         margin-right: auto;
         margin-left: 10px;
         width: 90px;
     }
+    .__msearch{ display: block;}
+    
+    .__fev,
+    .__profile,
     .__msearch{
-        display: block;
+        margin-right: 10px;
     }
+
+    .__fav_icon,
+    .__cart_icon{
+        width: 16px;
+    }
+
 }
