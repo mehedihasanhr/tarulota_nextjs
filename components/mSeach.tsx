@@ -32,6 +32,9 @@ const MobileSearchOption = ({ className, show = false }: Msearch) => {
     })
  }, [])
 
+
+ console.log(showSearch)
+
   return showSearch ? (
     <div className={`${styles.__search} ${className}`} >
       <input

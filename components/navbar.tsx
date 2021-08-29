@@ -1,6 +1,6 @@
 //default components
 import Link from "next/link";
-import { useState } from "react";
+import React, { useState } from "react";
 
 // css
 import styles from "./navbar.module.css";
@@ -23,7 +23,7 @@ const Navbar = () => {
   const [show, setShow] = useState(false);
 
 
-  const showSearchBar = (e) =>{
+  const showSearchBar = (e:React.MouseEvent<HTMLAnchorElement>) =>{
     e.preventDefault();
     setShow(!show);
   }
