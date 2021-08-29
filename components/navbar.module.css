@@ -1,5 +1,6 @@
 .__header{
     background: #fff;
+    position: relative;
     box-shadow: 0 3px 6px rga(0 0 0 / 10px);
 }
 
@@ -24,7 +25,8 @@
     align-items: center;
 }
 
-.__fav{
+.__fav,
+.__msearch{
     margin-right: 20px;
 }
 .__cart{
@@ -34,7 +36,9 @@
 .__cart span{
     white-space: nowrap;
 }
-
+.__msearch{
+    display: none;
+}
 
 
 @media only screen and (max-width: 1200px){
@@ -65,10 +69,15 @@
 }
 
 @media only screen and (max-width: 576px){
-    /* .__logo{display: none;} */
+    .__wrapper{
+        height: 50px;
+    }
     .__logo{
         margin-right: auto;
         margin-left: 10px;
         width: 90px;
+    }
+    .__msearch{
+        display: block;
     }
 }

@@ -1,0 +1,26 @@
+.__search{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid rgb(0 0 0 / 10%);
+    border-bottom: 2px solid var(--primary-theme);
+}
+.__input{
+    width: 100%;
+    padding: 11px 15px;
+    outline: none;
+    border: none;
+    color: #616266;
+    font-size: 13px;
+}
+
+.__search_btn{
+    outline: none;
+    border: none;
+    padding: 8px 15px;
+    color: #9fa2ad;
+    background: #fff;
+}
