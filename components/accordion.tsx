@@ -26,8 +26,7 @@ const Accordion = ({ head, items, show, onClick }: Accordion) => {
   useEffect(()=>{
     if(show === true){
       if(ARef.current){
-        let h = ARef.current.scrollHeight;
-        setHeight(h);
+        setHeight(ARef.current.scrollHeight);
       }
     }else{
       setHeight(0);
@@ -62,7 +61,6 @@ const Accordion = ({ head, items, show, onClick }: Accordion) => {
             ))}
           </ul>
         </div>
-      
     </div>
   );
 };
