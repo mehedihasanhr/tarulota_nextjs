@@ -9,6 +9,10 @@ export const MenuItems =[
             {
                 title: 'books-2',
                 path: '/books-2'
+            },
+            {
+                title: 'books-3',
+                path: '/books-3'
             }
         ]
     },
