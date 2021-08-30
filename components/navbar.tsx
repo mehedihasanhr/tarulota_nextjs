@@ -18,7 +18,13 @@ import MSearch from './mSeach';
 //utilites
 import { NavItems } from "../utilites/navItems";
 
-const Navbar = () => {
+interface Navbar{
+  showMenu?:Function;
+}
+
+
+
+const Navbar = ({showMenu}:Navbar) => {
 
   const [show, setShow] = useState(false);
 
@@ -29,12 +35,18 @@ const Navbar = () => {
   }
 
 
+  const handleSideBar = (e:React.MouseEvent<HTMLButtonElement>) =>{
+      e.preventDefault();
+      showMenu!==undefined && showMenu(e);
+  }
+
+
   return (
     <header>
       <div className={styles.__header}>
         <div className="container">
           <div className={styles.__wrapper}>
-            <button className={styles.__menu_btn}>
+            <button className={styles.__menu_btn} onClick={handleSideBar}>
               <Menu className={styles.__menu_icon} />
             </button>
 

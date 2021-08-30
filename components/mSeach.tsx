@@ -9,8 +9,7 @@ interface Msearch {
 }
 
 const MobileSearchOption = ({ className, show = false }: Msearch) => {
-    const [showSearch, setShowSearch] = useState(false);
-
+  const [showSearch, setShowSearch] = useState(false);
 
   const AutoFocus = useRef<HTMLInputElement>(null);
 
