@@ -3,43 +3,179 @@ export const MenuItems =[
         head: 'Bookshop',
         items: [
             {
-                title: 'books-1',
-                path: '/books-1'
+                title: 'sub-category',
+                path: '/'
             },
             {
-                title: 'books-2',
-                path: '/books-2'
+                title: 'sub-category',
+                path: '/'
             },
             {
-                title: 'books-3',
-                path: '/books-3'
-            }
+                title: 'sub-category',
+                path: '/'
+            },
+            {
+                title: 'sub-category',
+                path: '/'
+            },
+            {
+                title: 'sub-category',
+                path: '/'
+            },
+            {
+                title: 'sub-category',
+                path: '/'
+            },
         ]
     },
     {
         head: 'Electronics',
         items: [
             {
-                title: 'electronic-1',
-                path: '/electronic-1',
+                title: 'sub-category',
+                path: '/'
             },
             {
-                title: 'electronic-2',
-                path: '/electronic-2',
-            }
+                title: 'sub-category',
+                path: '/'
+            },
+            {
+                title: 'sub-category',
+                path: '/'
+            },
+            {
+                title: 'sub-category',
+                path: '/'
+            },
+            {
+                title: 'sub-category',
+                path: '/'
+            },
         ]
     },
     {
         head: 'Mobile Accessories',
         items: [
             {
-                title: 'mobile-1',
-                path: '/mobile-1',
+                title: 'sub-category',
+                path: '/'
             },
             {
-                title: 'mobile-2',
-                path: '/mobile-2',
-            }
+                title: 'sub-category',
+                path: '/'
+            },
+            {
+                title: 'sub-category',
+                path: '/'
+            },
+            {
+                title: 'sub-category',
+                path: '/'
+            },
+            {
+                title: 'sub-category',
+                path: '/'
+            },
+        ]
+    },
+    {
+        head: "Men's Shopping",
+        items: [
+            {
+                title: 'sub-category',
+                path: '/'
+            },
+            {
+                title: 'sub-category',
+                path: '/'
+            },
+            {
+                title: 'sub-category',
+                path: '/'
+            },
+            {
+                title: 'sub-category',
+                path: '/'
+            },
+            {
+                title: 'sub-category',
+                path: '/'
+            },
+        ]
+    },
+    {
+        head: "Women's Shopping",
+        items: [
+            {
+                title: 'sub-category',
+                path: '/'
+            },
+            {
+                title: 'sub-category',
+                path: '/'
+            },
+            {
+                title: 'sub-category',
+                path: '/'
+            },
+            {
+                title: 'sub-category',
+                path: '/'
+            },
+            {
+                title: 'sub-category',
+                path: '/'
+            },
+        ]
+    },
+    {
+        head: "Kid's Shopping",
+        items: [
+            {
+                title: 'sub-category',
+                path: '/'
+            },
+            {
+                title: 'sub-category',
+                path: '/'
+            },
+            {
+                title: 'sub-category',
+                path: '/'
+            },
+            {
+                title: 'sub-category',
+                path: '/'
+            },
+            {
+                title: 'sub-category',
+                path: '/'
+            },
+        ]
+    },
+    {
+        head: "Home & Gardening",
+        items: [
+            {
+                title: 'sub-category',
+                path: '/'
+            },
+            {
+                title: 'sub-category',
+                path: '/'
+            },
+            {
+                title: 'sub-category',
+                path: '/'
+            },
+            {
+                title: 'sub-category',
+                path: '/'
+            },
+            {
+                title: 'sub-category',
+                path: '/'
+            },
         ]
     }
 ]

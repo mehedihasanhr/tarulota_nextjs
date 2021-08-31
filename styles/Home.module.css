@@ -30,7 +30,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 15px;
+    font-size: 16px;
+    color: #3a3e42;
     border-bottom: 1px solid rgb(0 0 0 / 10%);
 }
 
@@ -53,13 +54,14 @@
 }
 .__item_link{
     display: block;
-    padding: 6px 10px;
+    padding: 8px 10px;
     transition: .2s;
+    color: #3a3e42;
     border-bottom: 1px solid rgb(0 0 0 / 5%);
-    font-size: 15px;
+    font-size: 16px;
 }
 .__item_link:hover{
-    padding: 6px 15px;
+    padding: 8px 15px;
 }
 
 
