@@ -1,0 +1,84 @@
+._cart_link{
+    text-decoration: none;
+    display: block;
+    margin-bottom: 25px;
+}
+._cart_link:hover{
+    color: #000;
+    box-shadow: 0 0 6px rgb(0 0 0 / 10%);
+}
+
+._cart{
+    width: 100%;
+    /* max-height: 350px; */
+    position: relative;
+    border-radius: 5px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 0 3px rgb(0 0 0 / 8%);
+    background: #fff;
+}
+
+._discount_badge{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    z-index: 1;
+    color: #fff;
+    width: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 2px 0px;
+    text-align: center;
+    background: #ffa800;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+._cart_image{
+    width: 100%;
+    padding: 10px;
+}
+
+._cart_title{
+    padding: 3px 10px;
+    height: 23px;
+    line-height: 20px;
+    margin: 0;
+    text-align: center;
+    max-width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    /* font-family: 'Roboto','Hind Siliguri', sans-serif; */
+    font-weight: 300;
+    font-size: 13px;
+}
+._cart_title_name{
+    font-weight: 400;
+    font-size: 15px;
+}
+._cart_title:empty{
+    display: none;
+}
+
+._cart_product_price{
+    font-size: 18px;
+    font-weight: 600;
+    color: #11ae68;
+    text-align: center;
+    padding: 10px 0;
+}
+
+._cart_product_price sub del{
+    color: #ff3300;
+    margin-left: 5px;
+}
+
+._cart_footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px 10px 10px;
+}

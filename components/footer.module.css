@@ -1,0 +1,123 @@
+._footer_container{
+    background: #fff;
+    padding-top: 30px;
+}
+
+._top_footer{
+    padding-bottom: 30px;
+}
+
+._footer_logo{
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+._footer_text{
+    font-size: 13px;
+    color: #838383;
+}
+._footer_helpline{
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+._footer_help_icon{
+    padding: 0;
+    margin: 0 6px 0 -.26rem ;
+}
+
+._footer_help_text p{
+    font-size: 11px;
+    color: #11ae68;
+    margin: 0;
+}
+._footer_help_text  h6{
+    font-size: 18px;
+    color: #616161;
+    margin: 0;
+}
+
+._brand_link{
+    display: flex;
+    align-items: center;
+}
+
+._brand_icon_link{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin-top: 15px;
+    margin-right: 10px;
+    color: #11ae68;
+    border-radius: 100%;
+    border: 1px solid #11ae68;
+    transition: .2s;
+}
+
+._brand_icon_link:hover{
+    color: #fff;
+    background: #11ae68;
+}
+
+
+
+/* bottom footer */
+._bottom_footer{
+    height: 60px;
+    line-height: 60px;
+    background: rgb(236, 236, 236);
+    vertical-align: center;
+}
+
+._bottom_footer_container,
+._footer_payment_list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+._bottom_footer_container p{
+    margin: 0;
+    font-size: 14px;
+}
+._footer_payment_options{
+    padding: 0;
+    font-size: 14px;
+}
+
+._footer_payment_options:hover{
+    color: #000;
+}
+
+
+/* quick link */
+
+._footer_header{
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+._footer_quick_list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+._footer_quick_link{
+    display: block;
+    padding: 3px 0;
+    font-size: 14px;
+    color: #777777;
+}
+
+._footer_quick_link:hover{
+    color: #000;
+}
+
+@media only screen and (max-width: 576px){
+    ._bottom_footer{
+        display: none;
+    }
+}

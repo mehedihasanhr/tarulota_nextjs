@@ -3,6 +3,7 @@ import Topbar from './topbar';
 import Navbar from './navbar';
 import Sidebar from './sidebar';
 import React, { useState } from 'react';
+import Footer from './footer';
 
 
 export default function Layout({ children }: any) {
@@ -25,7 +26,10 @@ export default function Layout({ children }: any) {
       <Topbar />
       <Navbar showMenu={showSidebar}/>
       <Sidebar show={show} onClick={closeSidebar}/>
-      {children}
+      <main>
+        {children}
+      </main>
+      <Footer/>
     </>
   );
 }
