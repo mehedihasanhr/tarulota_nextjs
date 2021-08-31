@@ -21,7 +21,7 @@ const CustomCarousel = ({ Images }: ICarousel) => {
     <Carousel activeIndex={index} onSelect={handleSelect} controls={false}>
       {Images.map((el, idx) => (
         <Carousel.Item key={idx}>
-          <Image src={el.img} alt={`slider-${idx}`} width={960} height={520} />
+          <Image src={el.img} alt={`slider-${idx}`} width={960} height={500} />
         </Carousel.Item>
       ))}
     </Carousel>
