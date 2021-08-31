@@ -7,7 +7,7 @@ import styles from "../../../styles/Details.module.css";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import type { GetServerSideProps } from "next";
+import type { GetServerSideProps, GetStaticPaths } from "next";
 import { GetStaticProps } from "next";
 import { useRouter } from "next/dist/client/router";
 import { ParsedUrlQuery } from "querystring";
@@ -48,9 +48,27 @@ interface Params extends ParsedUrlQuery {
   name: string,
 }
 
+interface iPath{
+  pid: number;
+  p_name: string;
+}
 
+export const getStaticPaths: GetStaticPaths = async() => {
+  // Call an external API endpoint to get posts
+  const res = await fetch('http://localhost:3000/api/books');
+  const posts = await res.json()
 
-export const getServerSideProps: GetServerSideProps = async ({params}) => {
+  // Get the paths we want to pre-render based on posts
+  const paths = posts.map(({pid, p_name}:iPath) => ({
+    params: { bid: pid.toString(), name: p_name },
+  }))
+
+  // We'll pre-render only these paths at build time.
+  // { fallback: false } means other routes should 404.
+  return { paths, fallback: true }
+}
+
+export const getStaticProps: GetStaticProps = async ({params}) => {
   const {bid} = params as Params;
   const res = await fetch(`http://localhost:3000/api/book/${bid}`,{method: 'GET'})
   const data = await res.json()
