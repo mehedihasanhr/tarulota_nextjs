@@ -41,8 +41,6 @@ const Details = () => {
     setProduct(books[idx]);
   }
 
-
-  console.log(product)
   return (
     <>
       <Head>
