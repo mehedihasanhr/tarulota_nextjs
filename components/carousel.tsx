@@ -1,10 +1,10 @@
 import Image from "next/image";
 import React, { useState } from "react";
 
-import Carousel from 'react-bootstrap/Carousel'
+import Carousel from "react-bootstrap/Carousel";
 
 interface ICarousel {
-  Images: {img:string}[];
+  Images: { img: string }[];
 }
 
 const CustomCarousel = ({ Images }: ICarousel) => {
@@ -21,12 +21,7 @@ const CustomCarousel = ({ Images }: ICarousel) => {
     <Carousel activeIndex={index} onSelect={handleSelect} controls={false}>
       {Images.map((el, idx) => (
         <Carousel.Item key={idx}>
-          <Image
-            src={el.img}
-            alt={`slider-${idx}`}
-            width={960}
-            height={520}
-          />
+          <Image src={el.img} alt={`slider-${idx}`} width={960} height={520} />
         </Carousel.Item>
       ))}
     </Carousel>
