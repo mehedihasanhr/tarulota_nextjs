@@ -69,19 +69,8 @@ const Home: NextPage = () => {
 
               {/* carousel */}
               <div className="col-lg-9 col-md-12 col-12">
-                <div style={{ zIndex: 1 }}>
-                  <CustomCarousel>
-                    {Images.map((el, idx) => (
-                      <div key={idx}>
-                        <Image
-                          src="/placeholder/bb.png"
-                          alt={`slider-${idx}`}
-                          width={960}
-                          height={520}
-                        />
-                      </div>
-                    ))}
-                  </CustomCarousel>
+                <div>
+                  <CustomCarousel Images={Images}/>
                 </div>
               </div>
               {/* carousel end */}
