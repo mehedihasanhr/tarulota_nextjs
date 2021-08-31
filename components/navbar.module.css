@@ -76,6 +76,7 @@
 
 @media only screen and (max-width: 576px){
     .__wrapper{ height: 50px;}
+    .__menu_btn{color: rgb(101, 104, 110);}
     .__menu_icon{ width: 18px;}
     .__logo{
         margin-right: auto;
@@ -84,15 +85,26 @@
     }
     .__msearch{ display: block;}
     
-    .__fev,
+    .__fav,
     .__profile,
     .__msearch{
         margin-right: 10px;
+        color: rgb(101, 104, 110);
+    }
+    .__cart{
+        color: rgb(101, 104, 110);
     }
 
     .__fav_icon,
     .__cart_icon{
         width: 16px;
+    }
+
+    .__fav:hover,
+    .__cart:hover,
+    .__profile:hover,
+    .__msearch:hover{
+        color: rgb(101, 104, 110);
     }
 
 }
