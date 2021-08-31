@@ -23,7 +23,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/fav-icon.svg" />
       </Head>
       <main>
-        <div className="container py-4">
+        <div className="container">
           <div className={styles.__hero_section}>
             <div className="row">
               <div className={`col-3 ${styles.__menu_col}`}>
