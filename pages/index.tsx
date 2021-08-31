@@ -147,7 +147,7 @@ const Home: NextPage<props> = (props) => {
 
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch(`http://localhost:3000/api/books`, {method: 'GET'})
+  const res = await fetch(`https://tarulota-nextjs.vercel.app/api/books`, {method: 'GET'})
   const data = await res.json()
   return{
     props: {

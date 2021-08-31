@@ -55,7 +55,7 @@ interface iPath{
 
 export const getStaticPaths: GetStaticPaths = async() => {
   // Call an external API endpoint to get posts
-  const res = await fetch('http://localhost:3000/api/books');
+  const res = await fetch('https://tarulota-nextjs.vercel.app/api/books');
   const posts = await res.json()
 
   // Get the paths we want to pre-render based on posts
@@ -70,7 +70,7 @@ export const getStaticPaths: GetStaticPaths = async() => {
 
 export const getStaticProps: GetStaticProps = async ({params}) => {
   const {bid} = params as Params;
-  const res = await fetch(`http://localhost:3000/api/book/${bid}`,{method: 'GET'})
+  const res = await fetch(`https://tarulota-nextjs.vercel.app/api/book/${bid}`,{method: 'GET'})
   const data = await res.json()
 
   return{
