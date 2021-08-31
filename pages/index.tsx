@@ -17,38 +17,15 @@ import Cart from "../components/cart";
 import Dropdown, { DropdownMenu, DropdownToggle } from "../components/dropdown";
 
 //utilites
-// import products from "../utilites/book.json";
+import products from "../utilites/book.json";
 import { Images } from "../utilites/carouselImage";
 import { MenuItems } from "../utilites/menuItem";
 
 
 
-interface props{
-  data: {
-    pid: number;
-    p_name: string;
-    auth: {
-      name: string;
-      photo: string;
-      about:[];
-    };
-    category: string;
-    publication: string;
-    rating: number;
-    price: number;
-    discount: number;
-    quantity: number;
-    language: string;
-    p_img:string;
-    discription:{}
-    reviews:{}
-  }[];
-}
 
-const Home: NextPage<props> = (props) => {
 
-  const products = props.data;
-
+const Home: NextPage = () => {
 
   return (
     <>
@@ -146,15 +123,7 @@ const Home: NextPage<props> = (props) => {
 
 
 
-export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch(`https://tarulota-nextjs.vercel.app/api/books`, {method: 'GET'})
-  const data = await res.json()
-  return{
-    props: {
-      data
-    }
-  }
-}
+
 
 
 export default Home;
