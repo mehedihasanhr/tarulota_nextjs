@@ -42,7 +42,6 @@ const Navbar = ({showMenu}:Navbar) => {
 
 
   return (
-    <header>
       <div className={styles.__header}>
         <div className="container">
           <div className={styles.__wrapper}>
@@ -100,7 +99,6 @@ const Navbar = ({showMenu}:Navbar) => {
           </div>
         </div>
       </div>
-    </header>
   );
 };
 

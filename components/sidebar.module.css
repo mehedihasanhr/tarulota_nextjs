@@ -8,11 +8,11 @@
     left: -255px;
     top: 0;
     z-index: 9;
-    transition: .2s ease-in-out;
-    background: rgba(0, 0, 0, 0.01);
+    transition: .4s ease-in-out;
+    background: transparent;
 }
 .__sidebar.__active{
-    max-width: 100%;
+    min-width: 100%;
     left: 0;
 }
 
@@ -27,7 +27,7 @@
     padding: 20px 20px;
     height: 100%;
     background: #fff;
-    box-shadow: 0 0 6px rgb(0 0 0 / 5%);
+    box-shadow: 0 0 6px rgb(0 0 0 / 10%);
     transition: .4s ease-in-out;
     z-index: 10;
 }

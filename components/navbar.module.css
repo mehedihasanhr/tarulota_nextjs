@@ -75,6 +75,15 @@
 }
 
 @media only screen and (max-width: 576px){
+    .__header{
+        position: sticky; 
+        position: -webkit-sticky; 
+        top: 0; 
+        left: 0; 
+        z-index: 9;
+        box-shadow: 0 3px 6px rgb(0 0 0 / 10%);
+    }
+
     .__wrapper{ height: 50px;}
     .__menu_btn{color: rgb(101, 104, 110);}
     .__menu_icon{ width: 18px;}
