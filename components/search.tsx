@@ -6,49 +6,13 @@ import { Search } from "react-feather";
 import Image from "next/image";
 import React, { useState } from "react";
 import books from "../utilites/book.json";
-import { useEffect } from "react";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import Scrollbar from './scrollbar'
-import { useRef } from "react";
 
 
 interface searchProps {
   className?: string;
 }
-
-interface TProduct {
-  pid: number;
-  p_name: string;
-  auth: {
-    name: string;
-    photo: string;
-    about: string[];
-  };
-  tag?: string[];
-  category: string;
-  publication: string;
-  rating: number;
-  price: number;
-  discount: number;
-  quantity: number;
-  language?: string;
-  p_img: string;
-  discription?: {
-    header?: string;
-    text?: string[];
-  };
-  reviews?: {
-    review?: {
-      photoUrl?: string;
-      displayName?: string;
-      reviewDate?: string;
-      reviewText?: string;
-    }[];
-  };
-}
-[];
-
 const SearchBox = ({ className }: searchProps) => {
   const [showSug, setShowSug] = useState<boolean>(false);
   const [search, setSearch] = useState<string>("");
@@ -85,7 +49,7 @@ const SearchBox = ({ className }: searchProps) => {
 
       {showSug && search.length! > 0 && (
         <div className={styles.__recom} >
-          <Scrollbar maxHeight={400}>
+          <Scrollbar maxHeight={380}>
           {books
             .filter(
               ({ tag, auth }) =>

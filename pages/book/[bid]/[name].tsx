@@ -185,10 +185,12 @@ const Details = () => {
                 </div>
                 <i className={`m-0 p-0 ms-3`}>In Stoke 48 items</i>
               </div>
-
             </div>
           </div>
         </div>
+        {/* end top section */}
+        {/* discription section */}
+        <div></div>
       </div>
     </>
   );
