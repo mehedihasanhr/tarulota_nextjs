@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Scrollbar from './scrollbar'
+import { useRef } from "react";
 
 
 interface searchProps {
@@ -53,6 +54,7 @@ const SearchBox = ({ className }: searchProps) => {
   const [search, setSearch] = useState<string>("");
   const route = useRouter();
 
+  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     setShowSug(true);
@@ -64,8 +66,8 @@ const SearchBox = ({ className }: searchProps) => {
     setSearch(name);
     setShowSug(false);
     route.push(`/book/${id}/${name.replace(/\s/g,'-')}`);
-
   };
+
 
   return (
     <div className={`${styles.__search} ${className}`}>
@@ -82,8 +84,8 @@ const SearchBox = ({ className }: searchProps) => {
       </button>
 
       {showSug && search.length! > 0 && (
-        <div className={styles.__recom}>
-          <Scrollbar>
+        <div className={styles.__recom} >
+          <Scrollbar maxHeight={400}>
           {books
             .filter(
               ({ tag, auth }) =>
