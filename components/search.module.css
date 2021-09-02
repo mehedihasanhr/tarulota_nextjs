@@ -4,6 +4,7 @@
     width: 100%;
     height: fit-content;
     max-width: 40%;
+    position: relative;
 }
 
 .__input{
@@ -34,6 +35,47 @@
     opacity: .9;
 }
 
+
+
+/* recom */
+
+.__recom{
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 20px;
+    z-index: 1;
+    height: 400px;
+    max-height: 400px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 10%);
+    overflow: hidden;
+}
+.__book{
+    display: flex;
+    align-content: center;
+    padding: 10px 10px;
+    border-bottom: 1px solid rgb(0 0 0 / 5%);
+}
+
+.__product_img{
+    width: 40px;
+    margin-right: 10px;
+}
+
+.__product_text{
+    flex: 1;
+}
+.__product_text p{
+    margin: 0;
+    font-size: 15px;
+}
+.__product_text span{
+    font-size: 13px;
+    color: rgb(122, 131, 141)
+}
 
 
 @media only screen and (max-width: 1200px){

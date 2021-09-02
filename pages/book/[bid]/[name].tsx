@@ -170,7 +170,7 @@ const Details = () => {
                 <span className="me-2">মূল্যঃ </span>
                 <p className={`m-0 p-0`}>
                   ৳ {price - price * discount /100}
-                  {discount > 0 && <sub> ( {discount } ছাড়ে )</sub>}
+                  {discount > 0 && <sub> ( {discount }% ছাড়ে )</sub>}
                 </p>
               </div>
 
