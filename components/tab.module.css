@@ -1,0 +1,36 @@
+.__tab_buttons{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    height: 39px;
+    background: #fff;
+    border-bottom: 1px solid rgb(0 0 0 / 5%);
+}
+
+.__tab_btn{
+    border: none;
+    outline: none;
+    background: transparent;
+    border-radius: 6px;
+    padding: 6px 20px;
+    height: 40px;
+    border-top: 2px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-left: 1px solid transparent;
+}
+
+.__tab_btn.__active{
+    background: #fff;
+    border-top: 2px solid var(--primary-theme);
+    border-right: 1px solid  rgb(0 0 0 / 5%);
+    border-bottom: 1px solid #fff;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 1px solid  rgb(0 0 0 / 5%);
+}
+
+.__tab_body{
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(0 0 0 / 5%);
+}

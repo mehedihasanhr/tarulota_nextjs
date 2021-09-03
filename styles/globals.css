@@ -64,8 +64,31 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+
 a:hover{
   color: #11ae68;
 }
 
+a:focus{
+  font-weight: 400 !important;
+  color: #11ae68;
+}
 
+
+.btn_primary{
+  color: #fff;
+  background: var(--primary-theme);
+}
+.btn_primary:hover{
+  background: #08A55F;
+}
+
+.btn_secondary{
+  color: #000;
+  background: #E9EEF1;
+}
+
+.btn_secondary:hover{
+  background: #D8DEE3;
+}

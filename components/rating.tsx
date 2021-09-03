@@ -1,5 +1,9 @@
+interface rating{
+    rating: any;
+}
 
-export const Rating = ({rating}) =>{
+
+export const Rating = ({rating}:rating) =>{
     return (
         <>
             {[...Array(5)].map((r,idx)=>(

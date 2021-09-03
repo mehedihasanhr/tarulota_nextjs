@@ -10,20 +10,33 @@ import Image from "next/image";
 // import type { GetServerSideProps, GetStaticPaths } from "next";
 // import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useEffect } from "react";
 import { ParsedUrlQuery } from "querystring";
 
 //custom components
-import {Rating} from '../../../components/rating';
-
+import { Rating } from "../../../components/rating";
+import Button from "../../../components/button";
 //utilites
 import books from "../../../utilites/book.json";
 import { ChevronDown, ChevronsUp, ChevronUp } from "react-feather";
+import Tabs, { Tab } from "../../../components/tab";
 
 interface Params extends ParsedUrlQuery {
   bid: string | string[];
   name: string;
+}
+
+interface productDetails {
+  label: string;
+  children: any;
+}
+
+interface productQuntity {
+  handleQntChange: Function;
+  addQnt: Function;
+  removeQnt: Function;
+  qnt: number;
 }
 
 interface TProduct {
@@ -32,7 +45,7 @@ interface TProduct {
   auth: {
     name: string;
     photo: string;
-    about: string | string[];
+    about: string[];
   };
   category: string;
   publication: string;
@@ -42,9 +55,9 @@ interface TProduct {
   quantity: number;
   language: string;
   p_img: string;
-  discription?: {
+  description?: {
     header?: string;
-    text?: string | string[];
+    text?: string[];
   };
   reviews?: {
     total_ratings?: number;
@@ -57,6 +70,10 @@ interface TProduct {
       reviewText?: string;
     }[];
   };
+  specification?: {
+    header: string;
+    text: string;
+  }[];
 }
 
 const Details = () => {
@@ -64,20 +81,18 @@ const Details = () => {
   const [qnt, setQnt] = useState<number>(0);
   const route = useRouter();
   let { bid } = route.query as Params;
-  const price:number = product!==undefined ? product.price : 0 ;
-  const discount = product!==undefined? product.discount: 0;
-
+  const price: number = product !== undefined ? product.price : 0;
+  const discount = product !== undefined ? product.discount : 0;
 
   useEffect(() => {
     GetProduct();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [bid]);
 
-
   //set default qnt
-  useEffect(()=>{
-    product && setQnt( product.quantity);
-  }, [product])
+  useEffect(() => {
+    product && setQnt(product.quantity);
+  }, [product]);
 
   // get product
   const GetProduct = () => {
@@ -89,26 +104,24 @@ const Details = () => {
   const handleQntChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     setQnt(parseInt(e.target.value));
-  }
+  };
 
   //add qnt
-  const addQnt = (e: React.MouseEvent<HTMLButtonElement>) =>{
+  const addQnt = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setQnt(qnt + 1);
-  }
+  };
 
   //remove qnt
-  const removeQnt = (e: React.MouseEvent<HTMLButtonElement>) =>{
+  const removeQnt = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    if(qnt === 1){
+    if (qnt === 1) {
       setQnt(qnt);
-    }else{
+    } else {
       setQnt(qnt - 1);
     }
-  }
-  
+  };
 
-  // console.log(product);
   return (
     <>
       <Head>
@@ -138,63 +151,192 @@ const Details = () => {
             <div className="col-xl-9 col-lg-8 col-md-8 col-12">
               <h4 className={styles.__product_title}> {product?.p_name} </h4>
 
-              <div className={styles.__product_details}>
-                <span className="me-2">লেখকঃ</span>
+              <ProductDetails label="লেখকঃ">
                 {product?.auth.name}
-              </div>
-
-              <div className={styles.__product_details}>
-                <span className="me-2">বিষয়ঃ</span>
-                {product?.category}
-              </div>
-
-              <div className={styles.__product_details}>
-                <span className="me-2">প্রকাশনীঃ</span>
+              </ProductDetails>
+              <ProductDetails label="বিষয়ঃ">{product?.category}</ProductDetails>
+              <ProductDetails label="প্রকাশনীঃ">
                 {product?.publication}
-              </div>
-                
-              <div className={styles.__product_details}>
-                <span className="me-2">Rating: </span>
-                <Rating rating={product?.rating}/>
-              </div>
+              </ProductDetails>
+              <ProductDetails label="Rating:">
+                <Rating rating={product?.rating} />
+              </ProductDetails>
 
-              {
-                discount > 0 && 
-                <div className={styles.__product_details}>
-                  <span className="me-2">মুদ্রিত মূল্যঃ </span>
+              {discount > 0 && (
+                <ProductDetails label="মুদ্রিত মূল্যঃ">
                   ৳ {price}
-                </div>
-              }
+                </ProductDetails>
+              )}
 
-              <div className={styles.__product_details}>
-                <span className="me-2">মূল্যঃ </span>
+              <ProductDetails label="মূল্যঃ">
                 <p className={`m-0 p-0`}>
-                  ৳ {price - price * discount /100}
-                  {discount > 0 && <sub> ( {discount }% ছাড়ে )</sub>}
+                  ৳ {price - (price * discount) / 100}
+                  {discount > 0 && <sub> ( {discount}% ছাড়ে )</sub>}
                 </p>
-              </div>
+              </ProductDetails>
 
-              <div className={`${styles.__product_details} py-2`}>
-                <span className="me-2">বই সংখ্যাঃ </span>
-                <div className={styles.__qantity}>
-                  <input type="text" className={styles.__qantity_num} value={qnt<10 ? `0`+qnt : qnt} onChange={handleQntChange}/>
-                  <div className="pb-2 mb-1 pe-1">
-                    <button className={styles.__less_btn} onClick={addQnt}> <ChevronUp strokeWidth={1} width={16} /> </button>
-                    <button className={styles.__more_btn} onClick={removeQnt} > <ChevronDown strokeWidth={1} width={16} /> </button>
-                  </div>
-                </div>
-                <i className={`m-0 p-0 ms-3`}>In Stoke 48 items</i>
+              <ProductDetails label="বই সংখ্যাঃ">
+                <ProductQuantity
+                  handleQntChange={handleQntChange}
+                  addQnt={addQnt}
+                  removeQnt={removeQnt}
+                  qnt={qnt}
+                />
+              </ProductDetails>
+
+              <div className={styles.__btn_group}>
+                <Button verient="primary" className={`${styles.__btn} me-2`}>
+                  Add to cart
+                </Button>
+                <Button verient="secondary" className={styles.__btn}>
+                  Add to wishlist
+                </Button>
               </div>
             </div>
           </div>
         </div>
         {/* end top section */}
-        {/* discription section */}
-        <div></div>
+        {/* description section */}
+        <div className={styles.__descript}>
+          <div className={styles.__section_header}> Product Specification </div>
+          <Tabs className={styles.__tab_header}>
+            <Tab label="Description">
+              <ProductDescription product={product} />
+            </Tab>
+            <Tab label="Specification">
+              <ProductSpec specification={product?.specification} />
+            </Tab>
+            <Tab label="Author">
+              <AuthDetails product={product} />
+            </Tab>
+          </Tabs>
+        </div>
+        {/* description end */}
       </div>
     </>
   );
 };
 
+const ProductQuantity = ({
+  handleQntChange,
+  addQnt,
+  removeQnt,
+  qnt,
+}: productQuntity) => {
+  return (
+    <div className="d-flex align-items-center">
+      <div className={styles.__qantity}>
+        <input
+          type="text"
+          className={styles.__qantity_num}
+          value={qnt < 10 ? `0` + qnt : qnt}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            handleQntChange(e)
+          }
+        />
+        <div className="pb-2 mb-1 pe-1">
+          <button
+            className={styles.__less_btn}
+            onClick={(e: React.MouseEvent<HTMLButtonElement>) => addQnt(e)}
+          >
+            <ChevronUp strokeWidth={1} width={16} />
+          </button>
+          <button
+            className={styles.__more_btn}
+            onClick={(e: React.MouseEvent<HTMLButtonElement>) => removeQnt(e)}
+          >
+            <ChevronDown strokeWidth={1} width={16} />
+          </button>
+        </div>
+      </div>
+      <i className={`m-0 p-0 ms-3`}>In Stoke 48 items</i>
+    </div>
+  );
+};
+
+//product specification
+const ProductSpec = ({ specification }: any) => {
+  return (
+    <div className={styles.__product_spec}>
+      <table className={styles.__spec_table}>
+        <tbody>
+          {specification.map((spec: any, idx: string) => (
+            <tr key={idx}>
+              <td className={styles.__spec_header}>{spec.header}</td>
+              <td className={styles.__spec_text}>{spec.text}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+//product details
+const ProductDetails = ({ label, children }: productDetails) => {
+  return (
+    <div className={styles.__product_details}>
+      <span className="me-2">{label}</span>
+      {children}
+    </div>
+  );
+};
+
+//product description
+const ProductDescription = ({ product }: any) => {
+  return (
+    <div className={styles.__product_description}>
+      <h6>{product?.description?.header}</h6>
+      {product?.description?.text?.map((txt: string, idx: number) => (
+        <p key={idx}> {txt} </p>
+      ))}
+    </div>
+  );
+};
+
+//auth details
+const AuthDetails = ({ product }: any) => {
+  const [seeMore, setSeeMore] = useState<boolean>(true);
+
+  let authRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (authRef !== null && authRef.current !== null) {
+      if (authRef.current.scrollHeight > 300) {
+        setSeeMore(true);
+      }
+    }
+  }, []);
+
+  return (
+    <div className={styles.__auth_details}>
+      {product !== undefined && (
+        <div className={styles.__auth_img_wrapper}>
+          <Image
+            src={product?.auth.photo}
+            alt={product?.auth.name}
+            width={100}
+            height={100}
+            className={styles.__auth_img}
+          />
+        </div>
+      )}
+
+      <div className={styles.__auth_profile}>
+        <h6>{product?.auth.name}</h6>
+        <div ref={authRef} className={styles._auth_details_con}>
+          {product?.auth.about.map((txt: string, idx: number) => (
+            <p key={idx}> {txt} </p>
+          ))}
+        </div>
+        {seeMore && (
+          <Link href="/">
+            <a className={styles.__see_more_auth_details}>See more...</a>
+          </Link>
+        )}
+      </div>
+    </div>
+  );
+};
 
 export default Details;
