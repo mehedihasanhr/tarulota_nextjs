@@ -14,7 +14,7 @@
 
 ._footer_text{
     font-size: 13px;
-    color: #838383;
+    color: #434850;
 }
 ._footer_helpline{
     display: flex;
@@ -109,7 +109,7 @@
     display: block;
     padding: 3px 0;
     font-size: 14px;
-    color: #777777;
+    color: #50545a;
 }
 
 ._footer_quick_link:hover{
