@@ -35,17 +35,17 @@ const Footer = () => {
                             </div>
                             <div className={styles._brand_link}>
                                 <Link href="/">
-                                    <a className={styles._brand_icon_link}>
+                                    <a aria-label="facebookIcon" className={styles._brand_icon_link}>
                                         <FontAwesomeIcon icon={faFacebookF} className={styles._brand_icon}/>
                                     </a>
                                 </Link>
                                 <Link href="/">
-                                    <a className={styles._brand_icon_link}>
+                                    <a aria-label="youtubeIcon" className={styles._brand_icon_link}>
                                         <FontAwesomeIcon icon={faYoutube} className={styles._brand_icon}/>
                                     </a>
                                 </Link>
                                 <Link href="/">
-                                    <a className={styles._brand_icon_link}>
+                                    <a aria-label="twiterIcon" className={styles._brand_icon_link}>
                                         <FontAwesomeIcon icon={faTwitter} className={styles._brand_icon}/>
                                     </a>
                                 </Link>

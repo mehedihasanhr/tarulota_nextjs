@@ -45,7 +45,7 @@ const Navbar = ({showMenu}:Navbar) => {
       <div className={styles.__header}>
         <div className="container">
           <div className={styles.__wrapper}>
-            <button className={styles.__menu_btn} onClick={handleSideBar}>
+            <button aria-label="menubtn" className={styles.__menu_btn} onClick={handleSideBar} >
               <Menu className={styles.__menu_icon} />
             </button>
 
@@ -62,19 +62,19 @@ const Navbar = ({showMenu}:Navbar) => {
             <div className={styles.__action}>
               
               <Link href="/" >
-                <a className={styles.__msearch} target="_blanck" onClick={showSearchBar}>
+                <a aria-label="SearchIcon" className={styles.__msearch} target="_blanck" onClick={showSearchBar}>
                     <Search strokeWidth={2} className={styles.__fav_icon} />
                 </a>
               </Link>
 
               <Link href="/fav">
-                <a className={styles.__profile}>
+                <a aria-label="UserIcon" className={styles.__profile}>
                     <User strokeWidth={2} className={styles.__fav_icon} />
                 </a>
               </Link>
 
               <Link href="/fav">
-                <a className={styles.__fav}>
+                <a aria-label="HeartIcon" className={styles.__fav}>
                   <Badge count={3}>
                     <Heart strokeWidth={2} className={styles.__fav_icon} />
                   </Badge>
