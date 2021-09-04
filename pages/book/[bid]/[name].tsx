@@ -21,6 +21,7 @@ import Button from "../../../components/button";
 import books from "../../../utilites/book.json";
 import { ChevronDown, ChevronsUp, ChevronUp } from "react-feather";
 import Tabs, { Tab } from "../../../components/tab";
+import { Review } from "../../../components/review";
 
 interface Params extends ParsedUrlQuery {
   bid: string | string[];
@@ -64,10 +65,10 @@ interface TProduct {
     total_reviews?: number;
     total_rating: number;
     review?: {
-      photoUrl?: string;
-      displayName?: string;
-      reviewDate?: string;
-      reviewText?: string;
+      photoUrl: string;
+      displayName: string;
+      reviewDate: string;
+      reviewText: string;
     }[];
   };
   specification?: {
@@ -212,6 +213,43 @@ const Details = () => {
           </Tabs>
         </div>
         {/* description end */}
+
+        {/* rating & reviews section */}
+        <div className={styles.__descript}>
+          <div className={styles.__section_header}> Ratings {"&"} Reviews </div>
+          <div className={styles.__rs_header}>
+            <div className={styles.__total_rating}>
+              <h1>
+                {product?.reviews?.total_rating}
+                <sub>/5</sub>
+              </h1>
+            </div>
+            <div className={styles.__ratings_and_reviews}>
+              <p>
+                {product?.reviews?.total_ratings} Ratings {"&"}
+                {product?.reviews?.total_reviews} Reviews
+              </p>
+              <Rating rating={product?.reviews?.total_rating} />
+            </div>
+            <div className={styles.__login}>
+              <Link href="/login">
+                <a className={styles.__r_login_btn}>Login</a>
+              </Link>
+              <p>to write review</p>
+            </div>
+          </div>
+          <div>
+            {product?.reviews?.review?.map((el, idx) => (
+              <Review
+                key={idx}
+                photoUrl={el.photoUrl}
+                displayName={el.displayName}
+                reviewDate={el.reviewDate}
+                reviewText={el.reviewText}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );

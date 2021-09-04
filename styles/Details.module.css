@@ -81,7 +81,7 @@
 /* description */
 .__descript {
   display: block;
-  padding: 50px;
+  padding: 40px 50px;
   background: #fff;
   border-radius: 10px;
   margin: 20px 0;
@@ -98,12 +98,12 @@
 }
 .__product_description h6 {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 15px;
   color: rgb(58, 61, 65);
 }
 
 .__product_description p {
-  font-size: 14px;
+  font-size: 15px;
   color: rgb(84, 89, 94);
 }
 
@@ -127,7 +127,7 @@
 }
 .__auth_profile h6 {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 15px;
   color: rgb(102, 108, 114);
 }
 ._auth_details_con {
@@ -153,12 +153,12 @@
   );
 }
 .__auth_profile p {
-  font-size: 14px;
+  font-size: 15px;
   color: rgb(102, 108, 114);
 }
 
 .__see_more_auth_details {
-  font-size: 14px;
+  font-size: 15px;
   color: rgb(102, 108, 114);
 }
 
@@ -171,11 +171,11 @@
   border: 1px solid rgb(0 0 0 / 10%);
 }
 .__spec_table tbody tr:nth-child(even) {
-  background: rgb(250, 250, 250);
+  background: rgb(252, 252, 252);
 }
 .__spec_table tbody tr td {
   padding: 8px 10px;
-  font-size: 14px;
+  font-size: 15px;
   border: 1px solid rgb(0 0 0 / 5%);
   color: rgb(0 0 0 / 80%);
 }
@@ -185,8 +185,6 @@
 .__spec_text {
   width: 600px;
 }
-
-
 
 @media only screen and (max-width: 768px) {
   .__top_section {
@@ -213,4 +211,80 @@
   .__product_details i {
     font-size: 14px;
   }
+
+  /* description */
+  .__descript {
+    padding: 20px;
+  }
+  .__section_header {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+  .__product_description h6 {
+    font-size: 14px;
+  }
+  .__product_description p {
+    font-size: 14px;
+  }
+
+  .__auth_img_wrapper {
+    width: 40px;
+  }
+
+  .__auth_profile h6 {
+    font-size: 14px;
+  }
+  .__auth_profile p {
+    font-size: 14px;
+  }
+  .__spec_table tbody tr td {
+    font-size: 14px;
+  }
+}
+
+
+
+/* Ratings sections */
+
+.__rs_header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(0 0 0 / 10%);
+  margin-bottom: 10px;
+}
+
+.__total_rating h1 sub{
+  font-size: 16px;
+  padding: 0 5px;
+  color: rgb(153, 154, 158);
+}
+
+.__ratings_and_reviews{
+  text-align: center;
+}
+
+.__ratings_and_reviews p{
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.__login{
+  text-align: center;
+}
+.__r_login_btn{
+  display: block;
+  padding: 6px 15px;
+  border-radius: 4px;
+  font-size: 15px;
+  border: 1px solid rgb(0 0 0 / 15%);
+}
+.__r_login_btn:hover{
+  color: #fff;
+  background: var(--primary-theme);
+  border: 1px solid var(--primary-theme);
+}
+.__login p{
+  font-size: 13px;
 }
