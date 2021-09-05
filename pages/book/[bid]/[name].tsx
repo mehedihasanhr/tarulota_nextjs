@@ -255,17 +255,14 @@ const Details = () => {
             ))}
           </div>
         </div>
+        {/* rating & reviews section end*/}
+
         {/* Recently Sold Products*/}
-        <div className={`${styles.__descript} ${styles.__recently_visited}` }>
+        <div className={`${styles.__descript} ${styles.__recently_visited}`}>
           <div className={styles.__section_header}> Recently sold products</div>
           <MultiCarousel>
-            {/* <div className="row gx-4"> */}
             {books?.map((items) => (
-              <div
-                className={styles.__recently_visited_cart}
-                key={items.pid}
-                // style={{ width: 170 }}
-              >
+              <div className={styles.__recently_visited_cart} key={items.pid}>
                 <Cart
                   title={items.p_name}
                   thumbnails={items.p_img}
@@ -276,10 +273,9 @@ const Details = () => {
                 />
               </div>
             ))}
-            {/* </div> */}
           </MultiCarousel>
         </div>
-        {/* Recently Sold Products end */}
+        {/* Recently sold products end */}
       </div>
     </>
   );
