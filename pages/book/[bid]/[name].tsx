@@ -22,6 +22,8 @@ import books from "../../../utilites/book.json";
 import { ChevronDown, ChevronsUp, ChevronUp } from "react-feather";
 import Tabs, { Tab } from "../../../components/tab";
 import { Review } from "../../../components/review";
+import MultiCarousel from "../../../components/multiCarousel";
+import Cart from "../../../components/cart";
 
 interface Params extends ParsedUrlQuery {
   bid: string | string[];
@@ -223,6 +225,9 @@ const Details = () => {
                 {product?.reviews?.total_rating}
                 <sub>/5</sub>
               </h1>
+              <span className={styles.__mb_rating}>
+                <Rating rating={product?.reviews?.total_rating} />
+              </span>
             </div>
             <div className={styles.__ratings_and_reviews}>
               <p>
@@ -250,6 +255,31 @@ const Details = () => {
             ))}
           </div>
         </div>
+        {/* Recently Sold Products*/}
+        <div className={`${styles.__descript} ${styles.__recently_visited}` }>
+          <div className={styles.__section_header}> Recently sold products</div>
+          <MultiCarousel>
+            {/* <div className="row gx-4"> */}
+            {books?.map((items) => (
+              <div
+                className={styles.__recently_visited_cart}
+                key={items.pid}
+                // style={{ width: 170 }}
+              >
+                <Cart
+                  title={items.p_name}
+                  thumbnails={items.p_img}
+                  price={items.price}
+                  discount={items.discount}
+                  subtitle={items.auth.name}
+                  url={`/book/${items.pid}/${items.p_name.replace(/\s/g, "-")}`}
+                />
+              </div>
+            ))}
+            {/* </div> */}
+          </MultiCarousel>
+        </div>
+        {/* Recently Sold Products end */}
       </div>
     </>
   );

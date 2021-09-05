@@ -261,6 +261,10 @@
   color: rgb(153, 154, 158);
 }
 
+.__mb_rating{
+  display: none;
+}
+
 .__ratings_and_reviews{
   text-align: center;
 }
@@ -280,11 +284,68 @@
   font-size: 15px;
   border: 1px solid rgb(0 0 0 / 15%);
 }
+.__r_login_btn:focus{
+  color: #000;
+}
 .__r_login_btn:hover{
   color: #fff;
   background: var(--primary-theme);
   border: 1px solid var(--primary-theme);
 }
+
 .__login p{
   font-size: 13px;
+  margin: 0;
 }
+
+@media only screen and (max-width: 576px){
+  .__total_rating h1{
+    font-size: 1.6rem !important;
+    margin-bottom: 0px;
+  }
+  .__mb_rating{
+    display: flex;
+    font-size: 13px;
+    width: 60px;
+  }
+  .__ratings_and_reviews{
+    display: none;
+  }
+  .__r_login_btn{
+    padding: 4px 15px;
+  }
+  .__login p{
+    font-size: 12px;
+  }
+}
+
+
+
+
+/* recently visited */
+
+.__recently_visited_cart{
+  width: 100%;
+  max-width: 180px;
+}
+
+@media only screen and ( max-width: 1200px){
+  .__recently_visited_cart{
+    max-width: 190px;
+  }
+}
+
+
+@media only screen and ( max-width: 768px){
+  .__recently_visited_cart{
+    max-width: 150px;
+  }
+}
+
+
+@media only screen and ( max-width: 576px){
+  .__recently_visited_cart{
+    max-width: 140px;
+  }
+}
+
