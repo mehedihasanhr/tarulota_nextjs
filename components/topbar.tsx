@@ -29,11 +29,11 @@ const Topbar = () =>{
 
                         <li className={styles._tb_nav_item}>
                             <UserPlus strokeWidth={2} width={13} />
-                            <Link href="/">
+                            <Link href="/login">
                                 <a className={styles._tb_nav_link} style={{borderRight: 0}}> Sign in </a>
                             </Link>
                             <span>Or</span>
-                            <Link href="/">
+                            <Link href="/register">
                                 <a className={styles._tb_nav_link}> Sign up </a>
                             </Link>
                         </li>

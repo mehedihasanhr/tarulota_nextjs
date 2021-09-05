@@ -65,13 +65,6 @@ const MobileSearchOption = ({ className, show = false }: Msearch) => {
     }
   }, [showSearch]);
 
-  //scroll to hide
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setShowSearch(false);
-    });
-  }, []);
-
   //handle chagne
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();

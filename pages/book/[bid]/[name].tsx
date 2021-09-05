@@ -118,8 +118,8 @@ const Details = () => {
   //remove qnt
   const removeQnt = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    if (qnt === 1) {
-      setQnt(qnt);
+    if (qnt <= 1) {
+      setQnt(1);
     } else {
       setQnt(qnt - 1);
     }
@@ -287,6 +287,7 @@ const ProductQuantity = ({
   removeQnt,
   qnt,
 }: productQuntity) => {
+
   return (
     <div className="d-flex align-items-center">
       <div className={styles.__qantity}>
