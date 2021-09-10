@@ -47,7 +47,7 @@ const Home: NextPage = () => {
                   <div className={styles.__menu_head}>All Category</div>
                   <div className={styles.__menu}>
                     {MenuItems.map((el, idx) => (
-                      <Dropdown float="right" key={idx}>
+                      <Dropdown hover float="right" key={idx}>
                         <DropdownToggle>
                           <div className={styles.__menu_item}>
                             {el.head}

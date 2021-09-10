@@ -1,4 +1,4 @@
-import styles from "../styles/Login.module.css";
+import styles from "../styles/Register.module.css";
 
 //custom component
 import Input from "../components/input";
@@ -6,59 +6,68 @@ import React, { useState } from "react";
 import Button from "../components/button";
 
 // default components
-import Link from 'next/link'
+import Link from "next/link";
+import Dropdown, { DropdownMenu, DropdownToggle } from "../components/dropdown";
+import { ChevronDown } from "react-feather";
 
-
-const Login = () => {
-  const [phone, setPhone] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-
-
-  const handleSubmit = (e:React.MouseEvent<HTMLButtonElement>) =>{
-    e.preventDefault();
-    console.log('phone:' + phone + ', password:' + password);
-  }
-
-
+const Register = () => {
   return (
     <div className="container">
-      <div className={styles.__login_container}>
-        <div className={styles.__wrapper}>
-          <div className={styles.__form_header}>Login to tarulota</div>
+      <div className={styles.__register}>
+        <div className={styles.__register_form}>
+          <div className={styles.__form_header}>
+            Registation Form
+            <span className={styles.__login}>
+              Have you an account?
+              <Link href="/login">
+                <a> Login </a>
+              </Link>
+            </span>
+          </div>
           <form action="">
-            <Input
-              type="text"
-              label="Phone Number"
-              value={phone}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                setPhone(e.target.value)
-              }
-            />
-            <Input
-              type="password"
-              label="Password"
-              value={password}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                setPassword(e.target.value)
-              }
-            />
+            <div className="row">
+              <div className="col">
+                <Input
+                  label="Full Name"
+                  required
+                  alert="Inter your full name"
+                />
+                <Dropdown float="bottom" dd_menu={styles.__dd_menu}>
+                  <DropdownToggle>
+                    <div className={styles.__gander_input}>
+                      <Input label="Gander" required readonly/>
+                      <ChevronDown
+                        strokeWidth={1}
+                        width={16}
+                        className={`${styles.__arrow_icon}`}
+                      />
+                    </div>
+                  </DropdownToggle>
+                  <DropdownMenu>
+                    <div className={styles.__gander}>
+                      <ul>
+                        <li>Male</li>
+                        <li>Female</li>
+                      </ul>
+                    </div>
+                  </DropdownMenu>
+                </Dropdown>
+                <Input label="Phone Number" required alert="Inter password" />
+              </div>
 
-            <div className={styles.__remember_me}>
-                <input type="checkbox" className="me-2" />
-                Remember me
-            </div>
-            
-            <div className={styles.__login_btn_con}>
-              <Button className={styles.__login_btn} onClick={handleSubmit}> Login </Button>
-            </div>
-
-            <div className={styles.__forget_section}>
-              <Link href="/forget-pass">
-                  <a href=""> Forget Password?</a>
-              </Link>
-              <Link href="/register">
-                  <a href=""> Create Account</a>
-              </Link>
+              <div className="col">
+                <Input label="Password" required alert="Inter password" />
+                <Input
+                  label="Confirm Password"
+                  required
+                  alert="Inter password"
+                />
+                <div className={styles.__reg_term}>
+                  <input type="checkbox" className="me-2" /> I accept all Terms
+                  {"&"} Condition
+                </div>
+                <Button className="col-12"> Register </Button>
+              </div>
             </div>
           </form>
         </div>
@@ -67,4 +76,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

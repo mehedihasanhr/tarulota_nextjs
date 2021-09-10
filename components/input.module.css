@@ -9,6 +9,10 @@
     color: rgb(61, 66, 70);
 }
 
+.__require{
+    color: red;
+}
+
 .__input_control{
     width: 100%;
     padding: 6px 10px;
@@ -23,5 +27,8 @@
     border: 1px solid var(--primary-theme);
 }
 
-
+.__alert_text{
+    font-size: 14px;
+    color: red;
+}
 

@@ -3,7 +3,10 @@ import React, { useState } from "react";
 import styles from "./dropdown.module.css";
 
 interface Dropdown {
-  float: string;
+  float?: string;
+  hover?: boolean;
+  dd_troggle?:string;
+  dd_menu?:string;
   children: {}[];
 }
 
@@ -19,7 +22,7 @@ export const DropdownMenu: React.FC<props> = ({ children }) => {
   return children;
 };
 
-const Dropdown: React.FC<Dropdown> = ({ float, children }) => {
+const Dropdown: React.FC<Dropdown> = ({ float='left', children, hover, dd_troggle, dd_menu  }) => {
   const [show, setShow] = useState<boolean>(false);
 
   const showDropdown = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -33,8 +36,12 @@ const Dropdown: React.FC<Dropdown> = ({ float, children }) => {
   };
 
   return (
-    <div className={styles.__dropdown} onMouseEnter={showDropdown} onMouseLeave={hideDropdown}>
-      <div className={styles.__dropdown_toggle} onClick={showDropdown}>
+    <div
+      className={styles.__dropdown}
+      onMouseEnter={hover ? showDropdown : undefined}
+      onMouseLeave={hideDropdown}
+    >
+      <div className={`${styles.__dropdown_toggle} ${dd_troggle}`} onClick={showDropdown}>
         {children[0]}
       </div>
       {show && (
@@ -45,6 +52,7 @@ const Dropdown: React.FC<Dropdown> = ({ float, children }) => {
                     ${float === "right" && styles.__right}
                     ${float === "bottom" && styles.__bottom}
                     ${float === "left" && styles.__left}
+                    ${dd_menu}
                 `}
         >
           {children[1]}

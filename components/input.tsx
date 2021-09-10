@@ -9,6 +9,9 @@ interface PropType {
   LabelClass?: string;
   InputClass?: string;
   onChange?: Function;
+  required?: boolean;
+  alert?: string;
+  readonly?:boolean;
 }
 
 const Input = ({
@@ -20,6 +23,9 @@ const Input = ({
   LabelClass,
   InputClass,
   onChange,
+  required,
+  alert,
+  readonly
 }: PropType) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -28,7 +34,7 @@ const Input = ({
   return (
     <div className={`${styles.__input_group} ${InputGroupClass}`}>
       <label htmlFor="" className={`${styles.__input_label} ${LabelClass}`}>
-        {label}
+        {label} { required && <span className={styles.__require}>*</span>}
       </label>
       <input
         type={type}
@@ -36,7 +42,11 @@ const Input = ({
         value={value}
         onChange={handleChange}
         className={`${styles.__input_control} ${InputClass}`}
+        readOnly={readonly ? true : false}
       />
+     {
+       alert && alert.length > 0 &&  <p className={styles.__alert_text}> {alert} </p>
+     }
     </div>
   );
 };
