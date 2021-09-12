@@ -22,7 +22,10 @@
     color: rgb(61, 66, 70);
     border: 1px solid rgb(0 0 0 / 8%);
 }
-
+.__input_control::placeholder{
+    font-size: 14px;
+    color: rgb(141, 145, 149);
+}
 .__input_control:focus{
     border: 1px solid var(--primary-theme);
 }

@@ -1,5 +1,8 @@
 import styles from "./input.module.css";
 
+
+import React, { forwardRef, useRef } from "react";
+
 interface PropType {
   type?: string;
   label?: string;
@@ -11,10 +14,10 @@ interface PropType {
   onChange?: Function;
   required?: boolean;
   alert?: string;
-  readonly?:boolean;
+  readonly?: boolean;
 }
 
-const Input = ({
+const InputCustom = ({
   type = "text",
   label,
   value,
@@ -25,8 +28,8 @@ const Input = ({
   onChange,
   required,
   alert,
-  readonly
-}: PropType) => {
+  readonly,
+}: PropType, ref:any) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     onChange && onChange(e);
@@ -34,21 +37,24 @@ const Input = ({
   return (
     <div className={`${styles.__input_group} ${InputGroupClass}`}>
       <label htmlFor="" className={`${styles.__input_label} ${LabelClass}`}>
-        {label} { required && <span className={styles.__require}>*</span>}
+        {label} {required && <span className={styles.__require}>*</span>}
       </label>
       <input
         type={type}
+        ref={ref}
         placeholder={placeholder}
         value={value}
         onChange={handleChange}
         className={`${styles.__input_control} ${InputClass}`}
         readOnly={readonly ? true : false}
       />
-     {
-       alert && alert.length > 0 &&  <p className={styles.__alert_text}> {alert} </p>
-     }
+      {alert && alert.length > 0 && (
+        <p className={styles.__alert_text}> {alert} </p>
+      )}
     </div>
   );
 };
+
+const Input = React.forwardRef(InputCustom);
 
 export default Input;

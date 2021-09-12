@@ -54,6 +54,7 @@ const Dropdown: React.FC<Dropdown> = ({ float='left', children, hover, dd_troggl
                     ${float === "left" && styles.__left}
                     ${dd_menu}
                 `}
+          onClick={hideDropdown}
         >
           {children[1]}
         </div>
