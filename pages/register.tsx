@@ -34,6 +34,8 @@ const Register = () => {
       } else {
         setUsernameErr("");
       }
+    }else{
+      setUsernameErr("");
     }
   }, [username]);
 
