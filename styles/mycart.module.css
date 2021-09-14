@@ -1,0 +1,116 @@
+.__wrapper{
+    display: block;
+    padding: 30px 0;
+}
+
+.__table_con{
+    display: block;
+    padding: 20px 30px;
+    background: #fff;
+    border-radius: 10px;
+    height: 100%;
+    min-height: 400px;
+}
+
+.__header{
+    display: block;
+    font-size: 15px;
+    display: flex;
+    padding: 10px 0;
+    font-weight: 600;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(0 0 0 / 10%);
+}
+
+.__table{
+    width: 100%;
+    display: block;
+}
+
+.__table_header{
+    display: flex;
+    align-items: center;
+}
+
+.__th{
+    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 20px 0;
+}
+
+.__table_body{
+    display: flex;
+    padding: 8px 0;
+    /* border-bottom: 1px solid rgb(0 0 0 / 5%); */
+}
+
+.__td{
+    width: 100%;
+    font-size: 14px;
+}
+
+.__td:last-child{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.__td_1{max-width: 60px; padding-right: 10px;}
+.__td_2{max-width: 300px; padding-right: 10px;}
+.__td_3{max-width: 150px; padding-right: 10px;}
+.__td_4{max-width: 150px; padding-right: 10px;}
+.__td_5{max-width: 150px; padding-right: 10px;}
+.__td_6{max-width: 100px;}
+
+
+/* checkout */
+.__checkout{
+    background: #fff;
+    height: fit-content;
+    width: 280px;
+    padding: 40px 30px;
+    border-radius: 10px;
+    margin-left: 25px;
+}
+
+.__gift{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    padding: 8px 0;
+}
+
+.__gift_txt{
+    margin-left: 10px;
+    margin-right: auto;
+}
+
+.__checkout_item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    padding: 8px 0;
+}
+
+.__checkout_total{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+    padding: 6px 0;
+    border-top: 1px solid rgb(0 0 0 / 10%);
+}
+
+.__checkout_total_label,
+.__total_price{
+    font-weight: 600;
+}
+
+.__checkout_btn{
+    width: 100%;
+    font-size: 15px;
+    margin-top: 10px;
+}

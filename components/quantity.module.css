@@ -1,0 +1,26 @@
+.__quantity{
+    display: flex;
+    align-items: center;
+}
+
+.__quantity_btn{
+    outline: none;
+    border: none;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    color: rgb(116, 123, 133);
+    background: rgb(241, 241, 241);
+}
+
+.__quantity_btn:hover{
+    color: rgb(59, 61, 63);
+    background: rgb(233, 236, 238);
+}
+
+.__quantity_value{
+    padding: 0 10px;
+}
