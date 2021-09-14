@@ -77,3 +77,41 @@
     background: #fff;
     box-shadow: 0 0 6px rgb(0 0 0 / 10%);
 }
+
+
+
+/* responsive */
+@media only screen and (max-width: 992px){
+    .__register{
+        padding: 30px 0;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .__register{
+        padding: 15px 0;
+    }
+    .__register_form{
+        padding: 30px 30px;
+    }
+    .__form_header{
+        font-size: 14px;
+    }
+    .__login{
+        font-size: 13px;
+    }
+
+}
+
+@media only screen and (max-width: 576px){
+    .__register_form{
+        padding: 20px 15px;
+    }
+    .__form_header{
+        font-size: 15px;
+    }
+    .__login{
+        font-size: 13px;
+    }
+
+}

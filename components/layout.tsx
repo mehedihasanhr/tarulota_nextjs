@@ -4,6 +4,7 @@ import Navbar from './navbar';
 import Sidebar from './sidebar';
 import React, { useState } from 'react';
 import Footer from './footer';
+import PhoneMenu from './phoneMenu';
 
 
 export default function Layout({ children }: any) {
@@ -26,6 +27,7 @@ export default function Layout({ children }: any) {
       <Topbar />
       <Navbar showMenu={showSidebar}/>
       <Sidebar show={show} onClick={closeSidebar}/>
+      <PhoneMenu/>
       <main>
         {children}
       </main>

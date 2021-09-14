@@ -4,3 +4,14 @@
     border: none;
     border-radius: 3px;
 }
+
+.__button:disabled{
+    opacity: .6;
+}
+
+
+@media only screen and (max-width: 576px){
+    .__button{
+        font-size: 14px;
+    }
+}

@@ -35,3 +35,13 @@
     color: red;
 }
 
+
+
+@media only screen and (max-width: 768px){
+    .__input_label{
+        font-size: 13px;
+    }
+    .__input_control{
+        font-size: 14px;
+    }
+}

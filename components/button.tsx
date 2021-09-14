@@ -5,6 +5,7 @@ interface Tbutton {
   verient?: string;
   className?: string;
   onClick?: Function;
+  disable?: boolean;
 }
 
 const Button = ({
@@ -12,6 +13,7 @@ const Button = ({
   verient = "primary",
   className,
   onClick,
+  disable,
 }: Tbutton) => {
   const handleOnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -19,7 +21,8 @@ const Button = ({
   };
   return (
     <button
-      className={`${styles.__button} btn_${verient} ${className}`}
+      className={`${styles.__button} btn_${verient} ${styles.__disable} ${className}`}
+      disabled={disable!== undefined ? disable : false}
       onClick={(e: React.MouseEvent<HTMLButtonElement>) => handleOnClick(e)}
     >
       {children}

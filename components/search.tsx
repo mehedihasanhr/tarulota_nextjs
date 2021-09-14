@@ -43,7 +43,7 @@ const SearchBox = ({ className }: searchProps) => {
         className={styles.__input}
         placeholder="Search here..."
       />
-      <button className={styles.__search_btn}>
+      <button aria-label="searchbtn" className={styles.__search_btn}>
         <Search strokeWidth={2} width={20} className={styles.__search_icon} />
       </button>
 

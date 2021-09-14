@@ -16,14 +16,23 @@ const Register = () => {
   const [phone, setPhone] = useState<string>("");
   const [phoneErr, setPhoneErr] = useState<string>("");
   const [gander, setGander] = useState<string>("");
+  const [age, setAge] = useState<string>("");
+  const [ageErr, setAgeErr] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [passErr, setPassErr] = useState<string>("");
   const [cpassword, setCpassword] = useState<string>("");
   const [cpasserr, setCpassErr] = useState<string>("");
-  const [condition, setCondition] = useState<string>("");
+  const [condition, setCondition] = useState<boolean>(false);
+  const [disable, setDisable] = useState<boolean>(true);
+
+
+  // handle submit button disable 
+  useEffect(()=>{
+    setDisable(!condition);
+  }, [condition])
+
 
   // handle username
-
   useEffect(() => {
     var regName = /^[a-zA-Z\s]+$/;
     if (username.length > 0) {
@@ -34,7 +43,7 @@ const Register = () => {
       } else {
         setUsernameErr("");
       }
-    }else{
+    } else {
       setUsernameErr("");
     }
   }, [username]);
@@ -85,10 +94,28 @@ const Register = () => {
     }
   }, [cpassword, password]);
 
-  const handleCpass = (e: React.ChangeEvent<HTMLInputElement>) =>{
+  const handleCpass = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     setCpassword(e.target.value);
-  }
+  };
+
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    if (!disable) {
+      console.log(
+        "Name: " +
+          username +
+          "\nGander: " +
+          gander +
+          "\nPhone: " +
+          phone +
+          "\npassword: " +
+          password + 
+          "\nAge: " +
+          age
+      );
+    }
+  };
 
   return (
     <div className="container">
@@ -105,7 +132,7 @@ const Register = () => {
           </div>
           <form action="">
             <div className="row">
-              <div className="col">
+              <div className="col-md-6 col ">
                 <Input
                   label="Full Name"
                   required
@@ -114,7 +141,9 @@ const Register = () => {
                   placeholder="Ex: Sameul Islam Simu"
                   onChange={handleUsername}
                 />
-                <Dropdown float="bottom" dd_menu={styles.__dd_menu}>
+                <div className="row">
+                  <div className="col">
+                  <Dropdown float="bottom" dd_menu={styles.__dd_menu}>
                   <DropdownToggle>
                     <div className={styles.__gander_input}>
                       <Input
@@ -140,6 +169,18 @@ const Register = () => {
                     </div>
                   </DropdownMenu>
                 </Dropdown>
+                  </div>
+                  <div className="col-4">
+                  <Input
+                  label="Age"
+                  required
+                  value={age}
+                  alert={ageErr}
+                  placeholder="Ex: 20"
+                  onChange={(e:React.ChangeEvent<HTMLInputElement>)=> setAge(e.target.value)}
+                />
+                  </div>
+                </div>
                 <Input
                   label="Phone Number"
                   required
@@ -150,7 +191,7 @@ const Register = () => {
                 />
               </div>
 
-              <div className="col">
+              <div className="col-md-6 ">
                 <Input
                   type="password"
                   label="Password"
@@ -168,10 +209,24 @@ const Register = () => {
                   onChange={handleCpass}
                 />
                 <div className={styles.__reg_term}>
-                  <input type="checkbox" className="me-2"  /> I accept all Terms
-                  {"&"} Condition
+                  <input
+                    type="checkbox"
+                    className="me-2"
+                    defaultChecked={condition}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                      setCondition(e.target.checked)
+                    }
+                  />
+                  I accept all Terms
+                  {" &"} Condition
                 </div>
-                <Button className="col-12"> Register </Button>
+                <Button
+                  disable={disable}
+                  className="col-12"
+                  onClick={handleSubmit}
+                >
+                  Register
+                </Button>
               </div>
             </div>
           </form>
