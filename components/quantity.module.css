@@ -24,3 +24,12 @@
 .__quantity_value{
     padding: 0 10px;
 }
+
+@media only screen and (max-width: 768px){
+    .__quantity_btn{
+        width: 20px;
+        height: 20px;
+        padding: 4px;
+    }
+    .__quantity_value{font-size: 13px;}
+}
