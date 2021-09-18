@@ -50,8 +50,7 @@ const Navbar = ({ showMenu }: Navbar) => {
           <div className={styles.__logo}>
             <Link href="/">
               <a>
-                {" "}
-                <Logo />{" "}
+                <Logo />
               </a>
             </Link>
           </div>
@@ -85,13 +84,13 @@ const Navbar = ({ showMenu }: Navbar) => {
               </Link>
             )}
 
-            <Link href="/fav">
+            <Link href="/account">
               <a aria-label="UserIcon" className={styles.__profile}>
                 <User strokeWidth={2} className={styles.__fav_icon} />
               </a>
             </Link>
 
-            <Link href="/fav">
+            <Link href="/favourite">
               <a aria-label="HeartIcon" className={styles.__fav}>
                 <Badge count={3}>
                   <Heart strokeWidth={2} className={styles.__fav_icon} />

@@ -1,0 +1,134 @@
+.__wrapper {
+  padding: 20px 0;
+  display: flex;
+  flex-wrap: nowrap;
+  /* position: relative; */
+}
+
+
+.__filter_section_wrapper{
+  min-width: 250px;
+}
+
+.__filter_section {
+  min-width: 250px;
+  display: block;
+  background: #fff;
+  padding: 10px 10px;
+}
+
+.__filter_wrapper {
+  padding: 10px;
+}
+
+.__filter_header {
+  font-size: 16px;
+  font-weight: 600;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgb(0 0 0 / 10%);
+  margin-bottom: 10px;
+}
+
+.__search_wrap {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.__search_control {
+  width: 100%;
+  outline: none;
+  border: none;
+  background: #f2f3f7;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.__search_control:placeholder {
+  font-size: 14px;
+  color: rgb(80, 85, 97);
+}
+
+.__filter_items_wrapper {
+  /* overflow-y: auto; */
+  height: 100%;
+  max-height: 300px;
+}
+
+/* __body_section */
+
+.__body_section {
+  flex-grow: 1;
+  width: 100%;
+  display: block;
+  height: fit-content;
+  padding-left: 20px;
+}
+
+.__header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 20px 0;
+  font-size: 16px;
+  font-weight: 600;
+  border-bottom: 1px solid rgb(0 0 0 / 10%);
+  margin-bottom: 20px;
+}
+
+.__filter_btn{
+  display: none;
+  font-size: 14px;
+  padding: 6px 20px;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 4px;
+  background: var(--primary-theme);
+}
+
+.__filter_btn:hover{
+  background: #08A55F;
+}
+
+/* Rasponsive */
+
+@media only screen and (max-width: 992px){
+  .__filter_btn{
+    display: block;
+  }
+  .__filter_section_wrapper{
+    position: fixed;
+    top: 0;
+    left: -260px;
+    z-index: 10;
+    height: 100%;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+    transition: 0.4s ease-in-out;
+  }
+  .__filter_section_wrapper.active{
+    left: 0;
+    width: 100%;
+    background: transparent;
+  }
+  .__filter_section{
+    position: fixed;
+    top: 0;
+    left: -260px;
+    z-index: 10;
+    height: 100%;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+    transition: 0.4s ease-in-out;
+  }
+
+  .__filter_section::-webkit-scrollbar{
+    width: 0;
+    opacity: 0;
+  }
+  .__filter_section.active{
+    left: 0;
+  }
+}

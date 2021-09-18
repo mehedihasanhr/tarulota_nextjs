@@ -51,7 +51,6 @@
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    /* font-family: 'Roboto','Hind Siliguri', sans-serif; */
     font-weight: 300;
     font-size: 13px;
 }

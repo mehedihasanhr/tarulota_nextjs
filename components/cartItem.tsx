@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Quantity from "./quantity";
 import { useState } from "react";
+import { Trash } from "react-feather";
 
 interface TCartItem {
   pid: number;
@@ -61,8 +62,11 @@ const CartItem = ({
       <div className={`${styles.__td} ${styles.__td_4}`}>৳ {price}</div>
       <div className={`${styles.__td} ${styles.__td_5}`}>{discount}%</div>
       <div className={`${styles.__td} ${styles.__td_6}`}>
-        ৳ {(price - (price * discount) / 100) * qnt}{" "}
+        ৳ {(price - (price * discount) / 100) * qnt}
       </div>
+      <button className={styles.__delete_cart}>
+        <Trash width={14} className={`${styles.__delete_cart_icon} mb-2`} />
+      </button>
     </div>
   ) : (
     <div className={styles.__table_body}>
@@ -78,10 +82,11 @@ const CartItem = ({
 
         <Quantity value={qnt} addValue={addValue} lessValue={lessValue} />
       </div>
-      <div className={`${styles.__td} ${styles.__td_5}`}>{discount}%</div>
+      <button className={styles.__delete_cart}>
+        <Trash width={14} className={`${styles.__delete_cart_icon} ${styles.__delete_cart_icon_mb} mb-2 `} />
+      </button>
       <div className={`${styles.__td} ${styles.__td_6}`}>
-        ৳ {(price - (price * discount) / 100) * qnt}{" "}
-        <p>({discount}% ছাড়ে)</p>
+        ৳ {(price - (price * discount) / 100) * qnt} <p>({discount}% ছাড়ে)</p>
       </div>
     </div>
   );

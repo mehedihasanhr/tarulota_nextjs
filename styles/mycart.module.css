@@ -144,6 +144,30 @@
   width: 100%;
 }
 
+
+.__delete_cart{
+  width: fit-content;
+  height: fit-content;
+  padding: 0;
+  outline: none;
+  border: none;
+  background: transparent;
+  margin-top: 0;
+}
+.__delete_cart_icon{
+  margin-top: -2px;
+  color: rgb(158, 167, 172);
+}
+.__delete_cart_icon:hover{
+  color: rgb(231, 15, 15);
+}
+
+.__delete_cart_icon_mb{
+  color: rgb(203, 212, 218);
+}
+
+
+
 /* Responsive */
 @media only screen and (max-width: 1400px) {
   .__td_1 {
