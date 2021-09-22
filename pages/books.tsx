@@ -7,19 +7,29 @@ import React, { useRef, useState } from "react";
 
 // custom components
 import CustomScrollbar from "../components/customScroll";
-import products from "../utilites/book.json";
 import Cart from "../components/cart";
 import Checkbox from "../components/checkbox";
 import { Rating } from "../components/rating";
 
+//utilities
+import { Category } from "../utilites/category";
+import products from "../utilites/book.json";
+
 //Search
-const Search = () => {
+const Search = ({ search, setSearch }: TSearch) => {
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    setSearch(e.target.value);
+  };
+
   return (
     <div className={styles.__search_wrap}>
       <input
         type="text"
         placeholder="Search..."
+        value={search}
         className={styles.__search_control}
+        onChange={handleSearch}
       />
     </div>
   );
@@ -27,21 +37,27 @@ const Search = () => {
 
 //Filter
 const Filter = ({ header, items }: Tfilter) => {
+  const [search, setSearch] = useState<string>("");
+
   return (
     <div className={styles.__filter_wrapper}>
       <div className={styles.__filter_header}>{header}</div>
-      <Search />
+      <Search search={search} setSearch={setSearch} />
       <div className={styles.__filter_items_wrapper}>
         <CustomScrollbar autoHide={true} height={200}>
-          {[...Array(20)].map((item, idx) => (
-            <Checkbox
-              key={idx}
-              pid={2}
-              label="আধ্যাত্মিকতা ও সুফিবাদ"
-              onChange={(val: any) => console.log(val)}
-              className="mb-2"
-            />
-          ))}
+          {items
+            .filter(({ tag }) =>
+              tag.some((el) => el.indexOf(search.toLowerCase()) > -1)
+            )
+            .map((item, idx) => (
+              <Checkbox
+                key={idx}
+                pid={item.cid}
+                label={item.title}
+                onChange={(val: any) => console.log(val)}
+                className="mb-2"
+              />
+            ))}
         </CustomScrollbar>
       </div>
     </div>
@@ -70,15 +86,15 @@ const FilterSection = ({ filter, setFilter }: tfilter) => {
         ref={filterRef}
       >
         <div className={styles.__filter}>
-          <Filter header="Categorys" items={[{ pid: 2, name: "work" }]} />
+          <Filter header="Categorys" items={Category} />
         </div>
 
         <div className={styles.__filter}>
-          <Filter header="Authors" items={[{ pid: 2, name: "work" }]} />
+          <Filter header="Authors" items={Category} />
         </div>
 
         <div className={styles.__filter}>
-          <Filter header="Publications" items={[{ pid: 2, name: "work" }]} />
+          <Filter header="Publications" items={Category} />
         </div>
 
         <div className={styles.__filter}>
@@ -213,6 +229,11 @@ const Books = () => {
   );
 };
 
+interface TSearch {
+  search: string;
+  setSearch: Function;
+}
+
 interface TfilterItem {
   pid: number;
   title: string;
@@ -221,8 +242,9 @@ interface TfilterItem {
 interface Tfilter {
   header: string;
   items: {
-    pid: number;
-    name: string;
+    cid: number;
+    title: string;
+    tag: string[];
   }[];
 }
 interface tfilter {
