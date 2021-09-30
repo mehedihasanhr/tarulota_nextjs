@@ -110,7 +110,7 @@ const Navbar = ({ showMenu }: Navbar) => {
                 <div className={styles.__profile_dropdown}>
                   {/* <span>MD</span> */}
                   <Image
-                    src="/images/user-img/28514360_818561974997314_5289592889269398660_o.jpg"
+                    src="/images/user_img/sam.jpg"
                     alt="img"
                     width={100}
                     height={100}
