@@ -111,7 +111,7 @@ const Navbar = ({ showMenu }: Navbar) => {
                   {/* <span>MD</span> */}
                   <Image
                     src="/images/user-img/28514360_818561974997314_5289592889269398660_o.jpg"
-                    alt=""
+                    alt="img"
                     width={100}
                     height={100}
                   />
