@@ -1,6 +1,7 @@
 //default components
 import Link from "next/link";
 import React, { useState } from "react";
+import Image from "next/image";
 
 // css
 import styles from "./navbar.module.css";
@@ -17,6 +18,7 @@ import MSearch from "./mSeach";
 
 //utilites
 import { NavItems } from "../utilites/navItems";
+import Dropdown, { DropdownMenu, DropdownToggle } from "./dropdown";
 
 interface Navbar {
   showMenu?: Function;
@@ -84,12 +86,6 @@ const Navbar = ({ showMenu }: Navbar) => {
               </Link>
             )}
 
-            <Link href="/account">
-              <a aria-label="UserIcon" className={styles.__profile}>
-                <User strokeWidth={2} className={styles.__fav_icon} />
-              </a>
-            </Link>
-
             <Link href="/favourite">
               <a aria-label="HeartIcon" className={styles.__fav}>
                 <Badge count={3}>
@@ -109,6 +105,43 @@ const Navbar = ({ showMenu }: Navbar) => {
                 <span className={`${styles.__cart_details} ms-2`}>৳ 1000</span>
               </a>
             </Link>
+            <Dropdown className="ms-2" dd_menu={styles.__profile} float="">
+              <DropdownToggle>
+                <div className={styles.__profile_dropdown}>
+                  {/* <span>MD</span> */}
+                  <Image
+                    src="/images/user-img/28514360_818561974997314_5289592889269398660_o.jpg"
+                    alt=""
+                    width={100}
+                    height={100}
+                  />
+                </div>
+              </DropdownToggle>
+              <DropdownMenu>
+                <ul className={styles.__profile_dropdown_menu}>
+                  <li className={styles.__profile_dropdown_item}>
+                    <Link href="/profile">
+                      <a className={styles.__profile_link}>Profile</a>
+                    </Link>
+                  </li>
+                  <li className={styles.__profile_dropdown_item}>
+                    <Link href="/profile/orders">
+                      <a className={styles.__profile_link}>My Orders</a>
+                    </Link>
+                  </li>
+                  <li className={styles.__profile_dropdown_item}>
+                    <Link href="/profile/wishlist">
+                      <a className={styles.__profile_link}>My WishList</a>
+                    </Link>
+                  </li>
+                  <li className={styles.__profile_dropdown_item}>
+                    <Link href="/profile">
+                      <a className={styles.__profile_link}>Log Out</a>
+                    </Link>
+                  </li>
+                </ul>
+              </DropdownMenu>
+            </Dropdown>
           </div>
 
           <MSearch show={show} />

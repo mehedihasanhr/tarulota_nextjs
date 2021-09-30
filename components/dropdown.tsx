@@ -5,8 +5,9 @@ import styles from "./dropdown.module.css";
 interface Dropdown {
   float?: string;
   hover?: boolean;
-  dd_troggle?:string;
-  dd_menu?:string;
+  dd_troggle?: string;
+  dd_menu?: string;
+  className?: string;
   children: {}[];
 }
 
@@ -22,7 +23,14 @@ export const DropdownMenu: React.FC<props> = ({ children }) => {
   return children;
 };
 
-const Dropdown: React.FC<Dropdown> = ({ float='left', children, hover, dd_troggle, dd_menu  }) => {
+const Dropdown: React.FC<Dropdown> = ({
+  float = "bottom",
+  children,
+  hover,
+  dd_troggle,
+  dd_menu,
+  className,
+}) => {
   const [show, setShow] = useState<boolean>(false);
 
   const showDropdown = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -37,11 +45,14 @@ const Dropdown: React.FC<Dropdown> = ({ float='left', children, hover, dd_troggl
 
   return (
     <div
-      className={styles.__dropdown}
+      className={`${styles.__dropdown} ${className}`}
       onMouseEnter={hover ? showDropdown : undefined}
       onMouseLeave={hideDropdown}
     >
-      <div className={`${styles.__dropdown_toggle} ${dd_troggle}`} onClick={showDropdown}>
+      <div
+        className={`${styles.__dropdown_toggle} ${dd_troggle}`}
+        onClick={showDropdown}
+      >
         {children[0]}
       </div>
       {show && (

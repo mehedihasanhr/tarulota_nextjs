@@ -1,0 +1,44 @@
+.__wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.__header {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 15px;
+  border-bottom: 1px solid rgb(0 0 0 / 10%);
+  margin-bottom: 20px;
+}
+
+.__alert {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 10px 10px;
+  color: var(--danger-theme);
+  background: var(--danger-theme-3);
+  margin-bottom: 5px;
+}
+
+.__alert:empty {
+  display: none;
+}
+
+.__form_wrapper {
+  width: 100%;
+  max-width: 450px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.__verify_phone {
+  width: 100%;
+  font-size: 15px;
+  margin-top: 5px;
+}

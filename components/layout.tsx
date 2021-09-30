@@ -4,7 +4,6 @@ import Navbar from "./navbar";
 import Sidebar from "./sidebar";
 import React, { useState } from "react";
 import Footer from "./footer";
-import PhoneMenu from "./phoneMenu";
 
 export default function Layout({ children }: any) {
   const [show, setShow] = useState<boolean>(false);
@@ -15,7 +14,7 @@ export default function Layout({ children }: any) {
     setShow(true);
   };
 
-  // close sidebar 
+  // close sidebar
   const closeSidebar = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setShow(false);
@@ -26,7 +25,6 @@ export default function Layout({ children }: any) {
       <Topbar />
       <Navbar showMenu={showSidebar} />
       <Sidebar show={show} onClick={closeSidebar} />
-      <PhoneMenu />
       <main>{children}</main>
       <Footer />
     </>

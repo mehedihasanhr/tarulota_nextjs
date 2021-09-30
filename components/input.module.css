@@ -1,47 +1,45 @@
-.__input_group{
-    margin-bottom: 10px;
+.__input_group {
+  margin-bottom: 10px;
 }
 
-.__input_label{
-    display: block;
-    padding: 5px 0;
+.__input_label {
+  display: block;
+  padding: 5px 0;
+  font-size: 15px;
+  color: rgb(61, 66, 70);
+}
+
+.__require {
+  color: red;
+}
+
+.__input_control {
+  width: 100%;
+  padding: 6px 10px;
+  outline: none;
+  border-radius: 4px;
+  font-size: 15px;
+  color: rgb(61, 66, 70);
+  border: 1px solid rgb(0 0 0 / 8%);
+}
+.__input_control::placeholder {
+  font-size: 13px;
+  color: rgb(154, 169, 184);
+}
+.__input_control:focus {
+  border: 1px solid var(--primary-theme);
+}
+
+.__alert_text {
+  font-size: 14px;
+  color: red;
+}
+
+@media only screen and (max-width: 768px) {
+  .__input_label {
     font-size: 14px;
-    color: rgb(61, 66, 70);
-}
-
-.__require{
-    color: red;
-}
-
-.__input_control{
-    width: 100%;
-    padding: 6px 10px;
-    outline: none;
-    border-radius: 4px;
-    font-size: 15px;
-    color: rgb(61, 66, 70);
-    border: 1px solid rgb(0 0 0 / 8%);
-}
-.__input_control::placeholder{
+  }
+  .__input_control {
     font-size: 14px;
-    color: rgb(141, 145, 149);
-}
-.__input_control:focus{
-    border: 1px solid var(--primary-theme);
-}
-
-.__alert_text{
-    font-size: 14px;
-    color: red;
-}
-
-
-
-@media only screen and (max-width: 768px){
-    .__input_label{
-        font-size: 13px;
-    }
-    .__input_control{
-        font-size: 14px;
-    }
+  }
 }

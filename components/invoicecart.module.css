@@ -1,0 +1,163 @@
+.__wrapper {
+  display: flex;
+  align-items: center;
+  padding: 20px 10px;
+  background: #fff;
+  margin-top: 10px;
+}
+
+.__wrapper:nth-child(odd) {
+  background: rgb(250, 250, 250);
+}
+
+.__invoice,
+.__item,
+.__price,
+.__status,
+.__actions {
+  width: 100%;
+}
+
+.__invoice span {
+  font-size: 13px;
+  display: block;
+  color: rgb(160, 165, 170);
+}
+
+.__item span {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-theme);
+  display: none;
+}
+
+.__status span {
+  display: block;
+  width: fit-content;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.__panding {
+  color: var(--warning-theme);
+  background: var(--warning-theme-3);
+}
+.__shipping {
+  color: var(--info-theme);
+  background: var(--info-theme-3);
+}
+
+.__completed {
+  color: var(--primary-theme);
+  background: var(--primary-theme-3);
+}
+
+.__actions {
+  display: flex;
+}
+
+.__actions span {
+  display: none;
+  width: fit-content;
+  padding: 0px 10px;
+  border-radius: 20px;
+  margin-bottom: 3px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.__action_btn {
+  margin-right: 10px;
+}
+
+.__cencel:hover {
+  color: red;
+}
+
+@media only screen and (max-width: 992px) {
+  .__invoice {
+    max-width: 200px;
+  }
+  .__item {
+    max-width: 80px;
+  }
+  .__price {
+    display: block;
+    max-width: 80px;
+  }
+  .__status {
+    max-width: 120px;
+  }
+  .__action_btn {
+    max-width: 100px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .__invoice {
+    max-width: 100%;
+  }
+  .__invoice span {
+    white-space: nowrap;
+  }
+  .__item {
+    max-width: 80%;
+    font-size: 14px;
+    color: rgb(133, 139, 163);
+  }
+  .__item span {
+    display: block;
+  }
+  .__price,
+  .__status {
+    display: none;
+  }
+
+  .__actions {
+    flex-direction: column;
+  }
+  .__actions span {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .__wrapper {
+    flex-direction: column;
+    position: relative;
+  }
+  .__invoice a {
+    font-weight: 600;
+    color: rgb(83, 90, 99);
+  }
+  .__price {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: fit-content;
+    height: fit-content;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    padding: 10px 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    color: #fff;
+    background: var(--primary-theme);
+  }
+  .__item {
+    display: none;
+  }
+  .__actions {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .__actions span {
+    font-size: 12px;
+  }
+}
