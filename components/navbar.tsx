@@ -105,16 +105,16 @@ const Navbar = ({ showMenu }: Navbar) => {
                 <span className={`${styles.__cart_details} ms-2`}>৳ 1000</span>
               </a>
             </Link>
-            <Dropdown className="ms-2" dd_menu={styles.__profile}>
+            <Dropdown className="ms-2" dd_menu={styles.__profile} float="">
               <DropdownToggle>
                 <div className={styles.__profile_dropdown}>
-                  {/* <span>MD</span> */}
-                  <Image
+                  <span>S</span>
+                  {/* <Image
                     src="/images/sam.jpg"
                     alt="S"
                     width={100}
                     height={100}
-                  />
+                  /> */}
                 </div>
               </DropdownToggle>
               <DropdownMenu>
