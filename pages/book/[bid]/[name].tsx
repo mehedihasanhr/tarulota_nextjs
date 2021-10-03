@@ -287,12 +287,12 @@ const ProductQuantity = ({
   removeQnt,
   qnt,
 }: productQuntity) => {
-
   return (
     <div className="d-flex align-items-center">
       <div className={styles.__qantity}>
         <input
           type="text"
+          readOnly
           className={styles.__qantity_num}
           value={qnt < 10 ? `0` + qnt : qnt}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>

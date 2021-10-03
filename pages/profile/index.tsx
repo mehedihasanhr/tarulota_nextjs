@@ -113,17 +113,25 @@ const Profile = () => {
                   </div>
                   <form className="py-3">
                     <Input type="text" label="State" placeholder="State" />
+
                     <Input
                       type="text"
-                      label="District"
-                      placeholder="District"
+                      label="Post Office"
+                      placeholder="Post Office"
                     />
-                    <Input type="text" label="Thana" placeholder="Thana" />
 
                     <Input
                       type="text"
                       label="Postal Code"
                       placeholder="Postal Code"
+                    />
+
+                    <Input type="text" label="Thana" placeholder="Thana" />
+
+                    <Input
+                      type="text"
+                      label="District"
+                      placeholder="District"
                     />
                   </form>
 
