@@ -108,13 +108,13 @@ const Navbar = ({ showMenu }: Navbar) => {
             <Dropdown className="ms-2" dd_menu={styles.__profile} float="">
               <DropdownToggle>
                 <div className={styles.__profile_dropdown}>
-                  <span>S</span>
-                  {/* <Image
+                  {/* <span>S</span> */}
+                  <Image
                     src="/images/sam.jpg"
                     alt="S"
                     width={100}
                     height={100}
-                  /> */}
+                  />
                 </div>
               </DropdownToggle>
               <DropdownMenu>
