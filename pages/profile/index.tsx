@@ -13,7 +13,6 @@ import { useState } from "react";
 import Button from "../../components/button";
 
 import { Users } from "../../utilites/users";
-import { useRouter } from "next/router";
 
 const Profile = () => {
   const [name, setName] = useState<string>("Sameul Islam Simu");
