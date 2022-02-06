@@ -129,11 +129,11 @@ const Navbar = ({ showMenu }: Navbar) => {
                       <a className={styles.__profile_link}>My Orders</a>
                     </Link>
                   </li>
-                  <li className={styles.__profile_dropdown_item}>
+                  {/* <li className={styles.__profile_dropdown_item}>
                     <Link href="/profile/wishlist">
                       <a className={styles.__profile_link}>My WishList</a>
                     </Link>
-                  </li>
+                  </li> */}
                   <li className={styles.__profile_dropdown_item}>
                     <Link href="/profile">
                       <a className={styles.__profile_link}>Log Out</a>

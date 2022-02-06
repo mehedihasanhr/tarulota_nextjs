@@ -41,11 +41,6 @@ const Orders = () => {
                   </Link>
                 </li>
                 <li className={styles.__profile_menu_item}>
-                  <Link href={`/profile/wishlist`}>
-                    <a>WishList</a>
-                  </Link>
-                </li>
-                <li className={styles.__profile_menu_item}>
                   <Link href={`/`}>
                     <a>Logout</a>
                   </Link>
