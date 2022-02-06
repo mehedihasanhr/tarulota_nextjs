@@ -171,7 +171,7 @@ const Profile = () => {
 
                     {Users[0].image ? (
                       <Image
-                        src={Users[0].image}
+                        src={'/images/sam.jpg'}
                         alt={Users[0].title}
                         width={150}
                         height={150}
